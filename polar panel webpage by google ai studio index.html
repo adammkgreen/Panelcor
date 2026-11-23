@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolarPanel | Nordic Electrical & Control Panel Marketplace</title>
+  <meta name="description" content="Electrical and control panels. Transparent pricing. Connected manufacturing capacity across the Nordics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0A1118;
+      --bg-surface-dark: #121D27;
+      --bg-light: #F4F6F8;
+      --surface-white: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #5A6A80;
+      --text-light: #E2E8F0;
+      --text-light-muted: #94A3B8;
+      --border-subtle: #E2E8F0;
+      --border-dark: #223243;
+      --nordic-blue: #0284C7;
+      --nordic-blue-hover: #0369A1;
+      --accent-copper: #D97706;
+      --accent-copper-soft: #FEF3C7;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-800: #1E293B;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Utility Bar */
+    .utility-bar {
+      background: #060B10;
+      color: var(--text-light-muted);
+      font-size: 0.78rem;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .utility-bar span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #10B981;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Main Navigation */
+    header {
+      background: rgba(10, 17, 24, 0.96);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+    }
+    .logo-symbol {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--nordic-blue), #38BDF8);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .logo span {
+      color: var(--nordic-blue);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+      cursor: pointer;
+    }
+    nav a:hover, nav a.active {
+      color: #FFFFFF;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Global Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--nordic-blue);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background: var(--nordic-blue-hover);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+    .btn-outline-dark:hover {
+      background: var(--slate-100);
+      border-color: #cbd5e1;
+    }
+
+    /* Containers */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section-sm {
+      padding: 48px 0;
+    }
+    .section-dark {
+      background: var(--bg-dark);
+      color: #FFFFFF;
+    }
+    .section-surface {
+      background: var(--surface-white);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* Typography Utilities */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+    }
+    .badge-blue {
+      background: rgba(2, 132, 199, 0.12);
+      color: #0284C7;
+      border: 1px solid rgba(2, 132, 199, 0.3);
+    }
+    .badge-dark-blue {
+      background: rgba(2, 132, 199, 0.2);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .badge-copper {
+      background: var(--accent-copper-soft);
+      color: var(--accent-copper);
+      border: 1px solid rgba(217, 119, 6, 0.25);
+    }
+    .heading-lg {
+      font-size: 2.85rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .heading-md {
+      font-size: 2.1rem;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      margin-bottom: 16px;
+    }
+    .heading-sm {
+      font-size: 1.3rem;
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .lead-light {
+      color: var(--text-light-muted);
+    }
+
+    /* Layout Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .card-dark {
+      background: var(--bg-surface-dark);
+      border-color: var(--border-dark);
+      color: var(--text-light);
+    }
+
+    /* Step Process Card */
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--nordic-blue);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .step-num::after {
+      content: '';
+      height: 1px;
+      flex-grow: 1;
+      background: var(--border-subtle);
+    }
+
+    /* Capacity Graph / Spec Box */
+    .spec-sheet {
+      background: #0E1622;
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #94A3B8;
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .spec-row:last-child {
+      border-bottom: none;
+    }
+    .spec-value {
+      color: #38BDF8;
+      font-weight: 500;
+    }
+
+    /* Forms */
+    .form-container {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #CBD5E1;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      background: #FFFFFF;
+      transition: border-color 0.15s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--nordic-blue);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Page Sections (Router) */
+    .page-view {
+      display: none;
+    }
+    .page-view.active-page {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: #060B10;
+      color: var(--text-light-muted);
+      padding: 60px 0 30px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.88rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      color: var(--text-light-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-col a:hover {
+      color: #FFFFFF;
+    }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    /* Alert / Success Toast */
+    .alert-box {
+      display: none;
+      padding: 16px;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      border-radius: var(--radius-sm);
+      color: #065F46;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .grid-4, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 16px;
+        gap: 14px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+      .heading-lg {
+        font-size: 2.1rem;
+      }
+      .heading-md {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Real-Time Network Info -->
+  <div class="utility-bar">
+    <span><span class="status-dot"></span> Nordic Panel Builder Network: Active</span>
+    <span>Coverage: Sweden • Norway • Denmark • Finland</span>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="navigateTo('home')">
+        <div class="logo-symbol">P</div>
+        PolarPanel
+      </a>
+
+      <nav>
+        <ul>
+          <li><a onclick="navigateTo('home')" id="nav-home" class="active">Home</a></li>
+          <li><a onclick="navigateTo('buyers')" id="nav-buyers">For Buyers</a></li>
+          <li><a onclick="navigateTo('manufacturers')" id="nav-manufacturers">For Panel Shops</a></li>
+          <li><a onclick="navigateTo('how-it-works')" id="nav-how-it-works">How It Works</a></li>
+          <li><a onclick="navigateTo('about')" id="nav-about">About</a></li>
+          <li><a onclick="navigateTo('contact')" id="nav-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-secondary" onclick="navigateTo('buyers')">Submit RFQ</button>
+        <button class="btn btn-primary" onclick="navigateTo('manufacturers')">List Capacity</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE: HOME                                                                -->
+  <!-- ========================================================================= -->
+  <main id="page-home" class="page-view active-page">
+    
+    <!-- Hero Section -->
+    <section class="section-dark section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-dark-blue">B2B Industrial Marketplace</span>
+          <h1 class="heading-lg">Electrical and control panels. Transparent pricing. Connected manufacturing capacity.</h1>
+          <p class="lead lead-light">PolarPanel matches machine builders, industrial OEMs, and engineering teams with pre-screened panel manufacturers across the Nordics that have immediate bench capacity.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="navigateTo('buyers')">Request Panel Quotations</button>
+            <button class="btn btn-secondary" onclick="navigateTo('how-it-works')">Explore How It Works</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 12px; font-size: 0.95rem;">LIVE MARKETPLACE SPECIFICATION</div>
+            <div class="spec-row">
+              <span>Standardization:</span>
+              <span class="spec-value">IEC 61439-1/-2, UL 508A</span>
+            </div>
+            <div class="spec-row">
+              <span>Primary Enclosure Types:</span>
+              <span class="spec-value">PLC Cabinets, MCCs, RIO Boxes</span>
+            </div>
+            <div class="spec-row">
+              <span>Current Aggregate Capacity:</span>
+              <span class="spec-value">~1,850 Assembly Hours / Month</span>
+            </div>
+            <div class="spec-row">
+              <span>Target Lead Time:</span>
+              <span class="spec-value">3–7 Weeks (Configurable)</span>
+            </div>
+            <div class="spec-row">
+              <span>Regional Coverage:</span>
+              <span class="spec-value">SE, NO, FI, DK (Workshop Network)</span>
+            </div>
+            <div class="spec-row">
+              <span>Drawing Formats:</span>
+              <span class="spec-value">EPLAN, AutoCAD Electrical, PDF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why PolarPanel Pillars -->
+    <section class="section section-surface">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+          <span class="badge badge-blue">Built for Industrial Scale</span>
+          <h2 class="heading-md">Solving Nordic panel manufacturing bottlenecks</h2>
+          <p class="lead" style="margin: 0 auto;">Panel building has historically relied on single-supplier relationships that suffer from seasonal backlogs, unpredictable lead times, and opaque labor estimates.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">⚡</div>
+            <h3 class="heading-sm">Verified Bench Availability</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">We connect buyers directly with qualified switchboard and panel shops that have active, open assembly lines—shortening project cycles significantly.</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">📐</div>
+            <h3 class="heading-sm">Structured Quotations</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Eliminate vague PDFs. Quotes submitted through PolarPanel break out component procurement, mechanical assembly, wiring labor, and Factory Acceptance Testing (FAT).</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">🛡️</div>
+            <h3 class="heading-sm">Rigorous Standards</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">All partner panel builders must produce according to IEC 61439 harmonized European directives or UL 508A for equipment bound for export.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 4-Step Process Section -->
+    <section class="section">
+      <div class="container">
+        <span class="badge badge-copper">Methodical Workflow</span>
+        <h2 class="heading-md">From drawing to finished cabinet in 4 disciplined steps</h2>
+        <p class="lead">A standardized lifecycle designed for electrical project managers and panel workshops.</p>
+
+        <div class="grid-4" style="margin-top: 40px;">
+          <div class="card">
+            <div class="step-num">STEP 01</div>
+            <h3 class="heading-sm">Submit an RFQ</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Provide project technical specs, Bill of Materials (BOM), enclosure sizes, target delivery dates, and compliance standards.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">STEP 02</div>
+            <h3 class="heading-sm">Compare Quotes</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Receive standardized bids from vetted Nordic panel builders with transparent itemization of components, assembly hours, and delivery.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">STEP 03</div>
+            <h3 class="heading-sm">Award Order</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Confirm order milestones, lock in component procurement windows, and issue formal engineering release with mutual NDAs.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">STEP 04</div>
+            <h3 class="heading-sm">Track Production</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Receive status checkpoints, component staging updates, routine verification reports (FAT), and delivery coordination.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capacity Balancing Feature -->
+    <section class="section section-dark">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-dark-blue">Supply Chain Balancing</span>
+          <h2 class="heading-md">How PolarPanel levels production peaks and valleys</h2>
+          <p class="lead lead-light">In the panel assembly industry, capacity is notoriously volatile. One month a workshop has a 4-week backlog, and the next month technician workbenches sit idle waiting for engineering approvals.</p>
+          <p style="color: var(--text-light-muted); font-size: 0.95rem; margin-bottom: 24px;">PolarPanel balances this dynamic: we route excess buyer demand to panel builders with spare workbench hours, stabilizing shop floor revenues and keeping client projects on schedule.</p>
+          <button class="btn btn-primary" onclick="navigateTo('manufacturers')">Learn More for Panel Builders</button>
+        </div>
+
+        <div class="card card-dark">
+          <h3 class="heading-sm" style="color: #FFFFFF;">Nordic Manufacturing Realities</h3>
+          <ul style="list-style: none; margin-top: 16px; font-size: 0.9rem; color: var(--text-light-muted);">
+            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-dark);">✓ <strong>Mitigate lead-time crunches:</strong> Shift production across regional workshops when your local supplier is booked.</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-dark);">✓ <strong>Preserve skilled technician hours:</strong> Panel shops avoid laying off assembly fitters during unexpected schedule delays.</li>
+            <li style="padding: 10px 0;">✓ <strong>Proximity & Sustainability:</strong> Sourcing within Sweden, Norway, Denmark, and Finland minimizes transit emissions and shipping hurdles.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE: FOR BUYERS                                                          -->
+  <!-- ========================================================================= -->
+  <main id="page-buyers" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Procurement & Engineering</span>
+        <h1 class="heading-lg">Source control panels on time, without supplier lock-in.</h1>
+        <p class="lead lead-light">Designed for machinery OEMs, industrial automation firms, system integrators, and infrastructure facilities across Northern Europe.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Standardized Sourcing</span>
+          <h2 class="heading-md">Why procure through PolarPanel?</h2>
+          
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">1. Escape single-shop bottlenecks</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">If your regular switchboard builder has an 18-week backlog, you no longer have to delay machinery commissioning. Tap directly into qualified peer shops with open assembly hours.</p>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">2. Apples-to-apples quotation format</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">We require standardized cost breakdowns for cabinet enclosures, switchgear, terminals, assembly labor, wiring, and testing documentation.</p>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">3. Strict adherence to standards</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Work with workshops proficient in IEC 61439-1 / IEC 61439-2 low-voltage switchgear standards, machinery safety directives (IEC 60204-1), and UL 508A specifications.</p>
+          </div>
+        </div>
+
+        <!-- Buyer Interest Form -->
+        <div class="form-container">
+          <h3 class="heading-sm">Register Buyer Interest / Early RFQ Access</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Register your organization to submit future panel RFQs or receive early platform onboarding.</p>
+          
+          <div id="buyer-alert" class="alert-box">
+            Thank you! Your buyer interest registration has been logged. Our Nordic procurement lead will contact you.
+          </div>
+
+          <form onsubmit="handleBuyerSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Company Name *</label>
+              <input type="text" class="form-control" required placeholder="e.g. Nordic Industrial Automation AB">
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Contact Person *</label>
+                <input type="text" class="form-control" required placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Work Email *</label>
+                <input type="email" class="form-control" required placeholder="name@company.se">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Country *</label>
+                <select class="form-control" required>
+                  <option value="Sweden">Sweden</option>
+                  <option value="Norway">Norway</option>
+                  <option value="Denmark">Denmark</option>
+                  <option value="Finland">Finland</option>
+                  <option value="Iceland">Iceland</option>
+                  <option value="Other">Other EU/EEA</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Estimated Annual Panels</label>
+                <select class="form-control">
+                  <option>1 – 10 panels/year</option>
+                  <option>10 – 50 panels/year</option>
+                  <option>50 – 250 panels/year</option>
+                  <option>250+ panels/year</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Typical Panel Types Needed</label>
+              <input type="text" class="form-control" placeholder="e.g., PLC/Control Cabinets, Drive Systems, Distribution Boards">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Key Requirements / Notes</label>
+              <textarea class="form-control" rows="3" placeholder="Tell us about typical lead time constraints, preferred brands (Rittal, Schneider, ABB, Siemens), or current supply challenges..."></textarea>
+              <p class="form-note">🔒 Notice: Confidential electrical schematics and CAD files are handled under direct NDA and are not shared publicly.</p>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Buyer Registration</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE: FOR PANEL MANUFACTURERS                                             -->
+  <!-- ========================================================================= -->
+  <main id="page-manufacturers" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">For Panel Builders & Workshops</span>
+        <h1 class="heading-lg">Turn idle bench hours into predictable revenue.</h1>
+        <p class="lead lead-light">PolarPanel matches quality-certified Nordic electrical workshops with qualified project orders to maintain smooth production all year round.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Workshop Efficiency</span>
+          <h2 class="heading-md">Eliminate seasonal capacity drops</h2>
+          
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Fill Scheduled Gaps</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Customer redesigns or delayed site approvals often stall your workshop schedule. PolarPanel allows you to take on pre-engineered sub-assemblies or complete control cabinets that match your exact open schedule.</p>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Zero Marketing Overhead</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Skip cold calling. Receive clear, structured specifications with full BOMs and CAD schematics ready for estimation, letting you focus on craftsmanship and quality.</p>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Maintain Your Own Margin Structure</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">You control your own shop rates. Provide itemized quotes based on your shop's efficiency and materials inventory.</p>
+          </div>
+
+          <div class="spec-sheet" style="margin-top: 30px;">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 10px;">CAPACITY PROFILES WE CONNECT:</div>
+            <div class="spec-row">
+              <span>Low-Volume / High-Mix:</span>
+              <span class="spec-value">Complex Automation Panels</span>
+            </div>
+            <div class="spec-row">
+              <span>Medium-Series:</span>
+              <span class="spec-value">OEM Serial Production</span>
+            </div>
+            <div class="spec-row">
+              <span>Quick-Turnaround:</span>
+              <span class="spec-value">Auxiliary / Junction Boxes</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manufacturer Registration Form -->
+        <div class="form-container">
+          <h3 class="heading-sm">Register Your Panel Workshop</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Join our directory of qualified Nordic switchboard and automation panel manufacturers.</p>
+
+          <div id="mfg-alert" class="alert-box">
+            Application received! Our manufacturer network team will review your workshop capabilities within 2 business days.
+          </div>
+
+          <form onsubmit="handleMfgSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Panel Workshop / Company Name *</label>
+              <input type="text" class="form-control" required placeholder="e.g. Nordic Switchboard Solutions Oy">
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Production Manager / Contact *</label>
+                <input type="text" class="form-control" required placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Business Email *</label>
+                <input type="email" class="form-control" required placeholder="production@company.com">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Workshop Location (Country) *</label>
+                <select class="form-control" required>
+                  <option value="Sweden">Sweden</option>
+                  <option value="Norway">Norway</option>
+                  <option value="Denmark">Denmark</option>
+                  <option value="Finland">Finland</option>
+                  <option value="Other">Other Nordic / Baltic</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Workshop Team Size</label>
+                <select class="form-control">
+                  <option>1 – 5 electrical fitters</option>
+                  <option>6 – 15 electrical fitters</option>
+                  <option>16 – 40 electrical fitters</option>
+                  <option>40+ electrical fitters</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Workshop Standards & Testing Capabilities</label>
+              <input type="text" class="form-control" placeholder="e.g. IEC 61439, UL 508A, ISO 9001, In-house FAT testing bay">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Average Monthly Available Hours (Estimate)</label>
+              <input type="text" class="form-control" placeholder="e.g. 80 - 200 bench hours/month">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Workshop Profile</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE: HOW IT WORKS                                                        -->
+  <!-- ========================================================================= -->
+  <main id="page-how-it-works" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Architecture & Flow</span>
+        <h1 class="heading-lg">A systematic marketplace for custom manufacturing.</h1>
+        <p class="lead lead-light">Learn how PolarPanel ensures specification fidelity, competitive quotes, and strict execution from start to finish.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">STAGE 01</div>
+            <h2 class="heading-md">Submit an RFQ</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Buyers upload structured project parameters: CAD drawings, single-line diagrams (SLD), functional circuit schematics, preferred brand lists (e.g., Schneider Electric, Siemens, ABB, Phoenix Contact, Rittal), and specific project delivery deadlines.</p>
+            <p style="font-size: 0.88rem; color: var(--text-muted);"><strong>Confidentiality First:</strong> Engineering files are never indexed publicly. They are stored in isolated vaults and only accessible to verified workshops that sign project-specific non-disclosure agreements.</p>
+          </div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 8px;">TYPICAL RFQ ARTIFACTS</div>
+            <div class="spec-row"><span>Circuit Schematics:</span><span class="spec-value">EPLAN P8 / PDF</span></div>
+            <div class="spec-row"><span>Bill of Materials:</span><span class="spec-value">Standardized Excel / CSV</span></div>
+            <div class="spec-row"><span>Enclosure Envelope:</span><span class="spec-value">Height, Width, Depth, IP Rating</span></div>
+            <div class="spec-row"><span>Testing Protocols:</span><span class="spec-value">FAT Checklist / Dielectric Test</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">STAGE 02</div>
+            <h2 class="heading-md">Compare Quotations</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Instead of unformatted email estimates, PolarPanel delivers standardized, itemized quotes. You receive direct comparisons of:</p>
+            <ul style="color: var(--text-muted); margin-left: 20px; font-size: 0.92rem; line-height: 1.8;">
+              <li>Component procurement cost & lead times</li>
+              <li>Mechanical assembly and wire-routing labor hours</li>
+              <li>Documentation, testing & FAT sign-off costs</li>
+              <li>Guaranteed ex-works or delivered shipping date</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 style="font-weight: 700; margin-bottom: 8px;">Transparent Comparison Metric</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">Quotes reflect real-world capacity. A shop with immediate capacity will offer accelerated turnaround without emergency overtime premiums.</p>
+            <div style="background: var(--slate-100); padding: 14px; border-radius: var(--radius-sm); font-size: 0.82rem; font-family: var(--font-mono);">
+              Builder A: 5 Weeks | Stocked Enclosure | IEC Compliant<br>
+              Builder B: 3.5 Weeks | Full Custom Wiring | Express Bay
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">STAGE 03</div>
+            <h2 class="heading-md">Award the Order</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Once the optimal quote is chosen, the order is locked. Both parties agree on milestones: engineering sign-off, component acquisition, assembly start, FAT testing date, and handover.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">PolarPanel provides contractual framework consistency, ensuring both the manufacturing shop and the customer have clear terms of payment and inspection.</p>
+          </div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 8px;">ORDER MILESTONES</div>
+            <div class="spec-row"><span>Milestone 1:</span><span class="spec-value">Engineering Approval & BOM Freeze</span></div>
+            <div class="spec-row"><span>Milestone 2:</span><span class="spec-value">Enclosure & Core Hardware In-House</span></div>
+            <div class="spec-row"><span>Milestone 3:</span><span class="spec-value">Wiring & Point-to-Point Verification</span></div>
+            <div class="spec-row"><span>Milestone 4:</span><span class="spec-value">FAT Sign-off & Freight Release</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="step-num">STAGE 04</div>
+            <h2 class="heading-md">Track Production</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Buyers maintain visibility into panel progress through milestone updates and testing sign-offs. Final routine testing protocols (IEC 61439 clause 11 routine verification) are completed and signed before dispatch.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">No surprise delays—if a component delay occurs, it is communicated transparently within the tracking timeline.</p>
+          </div>
+          <div class="card">
+            <h4 style="font-weight: 700; margin-bottom: 8px;">Quality Verification Checklist</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">Standard test reports provided with every completed panel unit:</p>
+            <ul style="font-size: 0.82rem; color: var(--text-muted); list-style: disc; margin-left: 18px;">
+              <li>Dielectric and insulation resistance tests</li>
+              <li>Protective conductor continuity tests</li>
+              <li>Visual mechanical torque verification</li>
+              <li>Point-to-point electrical function verification</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE: ABOUT                                                               -->
+  <!-- ========================================================================= -->
+  <main id="page-about" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Company Background</span>
+        <h1 class="heading-lg">Building resilience into Nordic industrial electrification.</h1>
+        <p class="lead lead-light">PolarPanel was conceived to modernize the physical backbone of the energy transition and industrial automation: the electrical control panel.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="heading-md">The Nordic Electrification Challenge</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">The Nordic region is leading the world in green industry transitions—from battery manufacturing and fossil-free steel to heat pumps, hydrogen plants, and automated logistics centers. Every single one of these installations requires custom electrical distribution panels, Motor Control Centers (MCCs), and PLC enclosures.</p>
+        
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Yet panel manufacturing remains fragmented. Talented panel shops with high technical mastery frequently experience irregular demand cycles. At the same time, machine builders face delivery lead times stretching 20+ weeks simply because their usual supplier is overbooked.</p>
+
+        <h3 class="heading-sm" style="margin-top: 36px;">Our Marketplace Mission</h3>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">PolarPanel builds the digital coordination layer that links this distributed capacity. By standardizing the RFQ process and connecting transparent capacity metrics across Sweden, Norway, Denmark, and Finland, we help workshops stay continuously productive while shortening industrial equipment lead times.</p>
+
+        <div class="card" style="margin-top: 40px; background: var(--slate-50);">
+          <h4 style="font-weight: 700; margin-bottom: 8px;">Future Roadmap: Full Digital Integration</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">As the marketplace expands, PolarPanel is architected to introduce secure authenticated portals, unified CAD and EPLAN cloud viewers, standardized component library pricing feeds, and automated FAT documentation compliance vaults.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- PAGE: CONTACT                                                             -->
+  <!-- ========================================================================= -->
+  <main id="page-contact" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Get in Touch</span>
+        <h1 class="heading-lg">Contact the PolarPanel team.</h1>
+        <p class="lead lead-light">Inquire about platform participation, enterprise RFQ integrations, or panel builder network onboarding.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Direct Dialogue</span>
+          <h2 class="heading-md">Let's discuss your panel capacity requirements</h2>
+          <p style="color: var(--text-muted); margin-bottom: 24px;">Whether you build panels and want to balance your shop floor, or you are an OEM looking for reliable manufacturing capacity across the Nordic countries, our team is ready to connect.</p>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Headquarters & Operations</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem;">PolarPanel AB (Proposed)<br>Nordic Industrial & Tech Corridor<br>Stockholm • Gothenburg • Helsinki</div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Direct Inquiries</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem; font-family: var(--font-mono);">operations@polarpanel.com</div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Operating Standards</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem;">Strict mutual NDAs on all technical drawing reviews. Direct compliance with European manufacturing safety directives.</div>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <h3 class="heading-sm">Send a Direct Message</h3>
+          
+          <div id="contact-alert" class="alert-box">
+            Message received! Our industrial coordination team will get back to you within 24 hours.
+          </div>
+
+          <form onsubmit="handleContactSubmit(event)">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" class="form-control" required placeholder="Your name">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" class="form-control" required placeholder="you@company.com">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">I am interested as a...</label>
+              <select class="form-control">
+                <option>Equipment Buyer / Machinery OEM</option>
+                <option>Electrical Panel Builder / Workshop</option>
+                <option>Engineering Consultant / System Integrator</option>
+                <option>Other / General Inquiry</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Message *</label>
+              <textarea class="form-control" rows="4" required placeholder="How can we assist with your upcoming projects or workshop capacity?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom: 14px;">
+          <div class="logo-symbol">P</div>
+          PolarPanel
+        </div>
+        <p style="font-size: 0.84rem; max-width: 320px; line-height: 1.6;">The specialized Nordic marketplace connecting electrical panel demand with verified workshop capacity.</p>
+        <p style="font-size: 0.78rem; margin-top: 14px; color: #64748B;">“Electrical and control panels. Transparent pricing. Connected manufacturing capacity.”</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a onclick="navigateTo('home')">Home</a></li>
+          <li><a onclick="navigateTo('buyers')">For Buyers</a></li>
+          <li><a onclick="navigateTo('manufacturers')">For Panel Shops</a></li>
+          <li><a onclick="navigateTo('how-it-works')">How It Works</a></li>
+          <li><a onclick="navigateTo('about')">About PolarPanel</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Standards</h4>
+        <ul>
+          <li><a href="#">IEC 61439-1 / -2</a></li>
+          <li><a href="#">UL 508A Compliance</a></li>
+          <li><a href="#">Machinery Directive 60204</a></li>
+          <li><a href="#">Confidential NDA Vaults</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Nordic Focus</h4>
+        <ul>
+          <li>Sweden (Sverige)</li>
+          <li>Norway (Norge)</li>
+          <li>Finland (Suomi)</li>
+          <li>Denmark (Danmark)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© PolarPanel Marketplace. All rights reserved. Industrial B2B Platform.</div>
+      <div>Standard Terms • Privacy & NDA Protocol • Engineering Data Protection</div>
+    </div>
+  </footer>
+
+  <!-- Page Logic & Demonstration Form Handlers -->
+  <script>
+    // Simple client-side page routing (no server or build tools required)
+    function navigateTo(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page-view');
+      pages.forEach(page => page.classList.remove('active-page'));
+
+      // Remove active nav class
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Show selected page
+      const targetPage = document.getElementById('page-' + pageId);
+      if (targetPage) {
+        targetPage.classList.add('active-page');
+      }
+
+      // Highlight active nav
+      const targetNav = document.getElementById('nav-' + pageId);
+      if (targetNav) {
+        targetNav.classList.add('active');
+      }
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Buyer Form Submission Demo
+    function handleBuyerSubmit(event) {
+      event.preventDefault();
+      const alert = document.getElementById('buyer-alert');
+      alert.style.display = 'block';
+      event.target.reset();
+      setTimeout(() => {
+        alert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+
+    // Manufacturer Form Submission Demo
+    function handleMfgSubmit(event) {
+      event.preventDefault();
+      const alert = document.getElementById('mfg-alert');
+      alert.style.display = 'block';
+      event.target.reset();
+      setTimeout(() => {
+        alert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+
+    // Contact Form Submission Demo
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const alert = document.getElementById('contact-alert');
+      alert.style.display = 'block';
+      event.target.reset();
+      setTimeout(() => {
+        alert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 100);
+    }
+  </script>
+</body>
+</html>
