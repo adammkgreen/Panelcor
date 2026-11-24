@@ -689,24 +689,24 @@
           <form onsubmit="handleBuyerSubmit(event)">
             <div class="form-group">
               <label class="form-label">Company Name *</label>
-              <input type="text" class="form-control" required placeholder="e.g. Nordic Industrial Automation AB">
+              <input type="text" class="form-control" required name="company" placeholder="e.g. Nordic Industrial Automation AB">
             </div>
 
             <div class="grid-2" style="gap: 14px;">
               <div class="form-group">
                 <label class="form-label">Contact Person *</label>
-                <input type="text" class="form-control" required placeholder="Name">
+                <input type="text" class="form-control" required name="person" placeholder="Name">
               </div>
               <div class="form-group">
                 <label class="form-label">Work Email *</label>
-                <input type="email" class="form-control" required placeholder="name@company.se">
+                <input type="email" class="form-control" required name="email" placeholder="name@company.se">
               </div>
             </div>
 
             <div class="grid-2" style="gap: 14px;">
               <div class="form-group">
                 <label class="form-label">Country *</label>
-                <select class="form-control" required>
+                <select class="form-control" required name="country">
                   <option value="Sweden">Sweden</option>
                   <option value="Norway">Norway</option>
                   <option value="Denmark">Denmark</option>
@@ -717,7 +717,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label">Estimated Annual Panels</label>
-                <select class="form-control">
+                <select class="form-control" name="annual_volume">
                   <option>1 – 10 panels/year</option>
                   <option>10 – 50 panels/year</option>
                   <option>50 – 250 panels/year</option>
@@ -728,15 +728,16 @@
 
             <div class="form-group">
               <label class="form-label">Typical Panel Types Needed</label>
-              <input type="text" class="form-control" placeholder="e.g., PLC/Control Cabinets, Drive Systems, Distribution Boards">
+              <input type="text" class="form-control" name="panel_types" placeholder="e.g., PLC/Control Cabinets, Drive Systems, Distribution Boards">
             </div>
 
             <div class="form-group">
               <label class="form-label">Key Requirements / Notes</label>
-              <textarea class="form-control" rows="3" placeholder="Tell us about typical lead time constraints, preferred brands (Rittal, Schneider, ABB, Siemens), or current supply challenges..."></textarea>
+              <textarea class="form-control" rows="3" name="notes" placeholder="Tell us about typical lead time constraints, preferred brands (Rittal, Schneider, ABB, Siemens), or current supply challenges..."></textarea>
               <p class="form-note">🔒 Notice: Confidential electrical schematics and CAD files are handled under direct NDA and are not shared publicly.</p>
             </div>
 
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Buyer Registration</button>
           </form>
         </div>
@@ -806,24 +807,24 @@
           <form onsubmit="handleMfgSubmit(event)">
             <div class="form-group">
               <label class="form-label">Panel Workshop / Company Name *</label>
-              <input type="text" class="form-control" required placeholder="e.g. Nordic Switchboard Solutions Oy">
+              <input type="text" class="form-control" required name="company" placeholder="e.g. Nordic Switchboard Solutions Oy">
             </div>
 
             <div class="grid-2" style="gap: 14px;">
               <div class="form-group">
                 <label class="form-label">Production Manager / Contact *</label>
-                <input type="text" class="form-control" required placeholder="Name">
+                <input type="text" class="form-control" required name="person" placeholder="Name">
               </div>
               <div class="form-group">
                 <label class="form-label">Business Email *</label>
-                <input type="email" class="form-control" required placeholder="production@company.com">
+                <input type="email" class="form-control" required name="email" placeholder="production@company.com">
               </div>
             </div>
 
             <div class="grid-2" style="gap: 14px;">
               <div class="form-group">
                 <label class="form-label">Workshop Location (Country) *</label>
-                <select class="form-control" required>
+                <select class="form-control" required name="country">
                   <option value="Sweden">Sweden</option>
                   <option value="Norway">Norway</option>
                   <option value="Denmark">Denmark</option>
@@ -833,7 +834,7 @@
               </div>
               <div class="form-group">
                 <label class="form-label">Workshop Team Size</label>
-                <select class="form-control">
+                <select class="form-control" name="team_size">
                   <option>1 – 5 electrical fitters</option>
                   <option>6 – 15 electrical fitters</option>
                   <option>16 – 40 electrical fitters</option>
@@ -844,14 +845,15 @@
 
             <div class="form-group">
               <label class="form-label">Workshop Standards & Testing Capabilities</label>
-              <input type="text" class="form-control" placeholder="e.g. IEC 61439, UL 508A, ISO 9001, In-house FAT testing bay">
+              <input type="text" class="form-control" name="standards" placeholder="e.g. IEC 61439, UL 508A, ISO 9001, In-house FAT testing bay">
             </div>
 
             <div class="form-group">
               <label class="form-label">Average Monthly Available Hours (Estimate)</label>
-              <input type="text" class="form-control" placeholder="e.g. 80 - 200 bench hours/month">
+              <input type="text" class="form-control" name="capacity_hours" placeholder="e.g. 80 - 200 bench hours/month">
             </div>
 
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Workshop Profile</button>
           </form>
         </div>
@@ -1024,17 +1026,17 @@
           <form onsubmit="handleContactSubmit(event)">
             <div class="form-group">
               <label class="form-label">Full Name *</label>
-              <input type="text" class="form-control" required placeholder="Your name">
+              <input type="text" class="form-control" required name="person" placeholder="Your name">
             </div>
 
             <div class="form-group">
               <label class="form-label">Email Address *</label>
-              <input type="email" class="form-control" required placeholder="you@company.com">
+              <input type="email" class="form-control" required name="email" placeholder="you@company.com">
             </div>
 
             <div class="form-group">
               <label class="form-label">I am interested as a...</label>
-              <select class="form-control">
+              <select class="form-control" name="interest_type">
                 <option>Equipment Buyer / Machinery OEM</option>
                 <option>Electrical Panel Builder / Workshop</option>
                 <option>Engineering Consultant / System Integrator</option>
@@ -1044,9 +1046,10 @@
 
             <div class="form-group">
               <label class="form-label">Message *</label>
-              <textarea class="form-control" rows="4" required placeholder="How can we assist with your upcoming projects or workshop capacity?"></textarea>
+              <textarea class="form-control" rows="4" required name="message" placeholder="How can we assist with your upcoming projects or workshop capacity?"></textarea>
             </div>
 
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
           </form>
         </div>
@@ -1165,5 +1168,6 @@
       }, 100);
     }
   </script>
+  <script src="forms-client.js"></script>
 </body>
 </html>
