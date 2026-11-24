@@ -12,9 +12,12 @@ async function submitForm(event, kind) {
   }
   const data = Object.fromEntries(new FormData(form).entries());
   data.kind = kind;
+  const langInput = form.querySelector('input[name="lang"]');
+  if (langInput?.value) data.lang = langInput.value;
+  const i18n = window.PANELCOR_I18N || {};
   const button = form.querySelector('button[type="submit"]');
   const original = button?.textContent;
-  if (button) { button.disabled = true; button.textContent = "Sending…"; }
+  if (button) { button.disabled = true; button.textContent = i18n.sending || "Sending…"; }
   try {
     const res = await fetch(`${API_BASE}/signup`, {
       method: "POST",
@@ -26,10 +29,10 @@ async function submitForm(event, kind) {
       showAlert(event, kind === "buyer" ? "buyer-alert" : kind === "builder" ? "mfg-alert" : "contact-alert");
       form.reset();
     } else {
-      alert(out.error || "Submission failed — please email operations@Panelcor.com");
+      alert(out.error || i18n.failed || "Submission failed — please email operations@Panelcor.com");
     }
   } catch {
-    alert("Network error — please try again or email operations@Panelcor.com");
+    alert(i18n.networkError || "Network error — please try again or email operations@Panelcor.com");
   } finally {
     if (button) { button.disabled = false; if (original) button.textContent = original; }
   }

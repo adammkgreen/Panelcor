@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panelcor | Marknadsplats för elskåp och styrskåp i Norden</title>
+  <meta name="description" content="Elskåp och styrskåp. Transparent prissättning. Sammanbunden tillverkningskapacitet i Norden.">
+  <link rel="alternate" hreflang="en" href="https://panelcor.com/">
+  <link rel="alternate" hreflang="sv" href="https://panelcor.com/sv/">
+  <link rel="alternate" hreflang="x-default" href="https://panelcor.com/">
+  <link rel="canonical" href="https://panelcor.com/sv/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0A1118;
+      --bg-surface-dark: #121D27;
+      --bg-light: #F4F6F8;
+      --surface-white: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #5A6A80;
+      --text-light: #E2E8F0;
+      --text-light-muted: #94A3B8;
+      --border-subtle: #E2E8F0;
+      --border-dark: #223243;
+      --nordic-blue: #0284C7;
+      --nordic-blue-hover: #0369A1;
+      --accent-copper: #D97706;
+      --accent-copper-soft: #FEF3C7;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-800: #1E293B;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Utility Bar */
+    .utility-bar {
+      background: #060B10;
+      color: var(--text-light-muted);
+      font-size: 0.78rem;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .utility-bar span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #10B981;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Main Navigation */
+    header {
+      background: rgba(10, 17, 24, 0.96);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+    }
+    .logo-symbol {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--nordic-blue), #38BDF8);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .logo span {
+      color: var(--nordic-blue);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+      cursor: pointer;
+    }
+    nav a:hover, nav a.active {
+      color: #FFFFFF;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Global Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--nordic-blue);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background: var(--nordic-blue-hover);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+    .btn-outline-dark:hover {
+      background: var(--slate-100);
+      border-color: #cbd5e1;
+    }
+
+    /* Containers */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section-sm {
+      padding: 48px 0;
+    }
+    .section-dark {
+      background: var(--bg-dark);
+      color: #FFFFFF;
+    }
+    .section-surface {
+      background: var(--surface-white);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* Typography Utilities */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+    }
+    .badge-blue {
+      background: rgba(2, 132, 199, 0.12);
+      color: #0284C7;
+      border: 1px solid rgba(2, 132, 199, 0.3);
+    }
+    .badge-dark-blue {
+      background: rgba(2, 132, 199, 0.2);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .badge-copper {
+      background: var(--accent-copper-soft);
+      color: var(--accent-copper);
+      border: 1px solid rgba(217, 119, 6, 0.25);
+    }
+    .heading-lg {
+      font-size: 2.85rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .heading-md {
+      font-size: 2.1rem;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      margin-bottom: 16px;
+    }
+    .heading-sm {
+      font-size: 1.3rem;
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .lead-light {
+      color: var(--text-light-muted);
+    }
+
+    /* Layout Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .card-dark {
+      background: var(--bg-surface-dark);
+      border-color: var(--border-dark);
+      color: var(--text-light);
+    }
+
+    /* Step Process Card */
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--nordic-blue);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .step-num::after {
+      content: '';
+      height: 1px;
+      flex-grow: 1;
+      background: var(--border-subtle);
+    }
+
+    /* Capacity Graph / Spec Box */
+    .spec-sheet {
+      background: #0E1622;
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #94A3B8;
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .spec-row:last-child {
+      border-bottom: none;
+    }
+    .spec-value {
+      color: #38BDF8;
+      font-weight: 500;
+    }
+
+    /* Forms */
+    .form-container {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #CBD5E1;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      background: #FFFFFF;
+      transition: border-color 0.15s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--nordic-blue);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Page Sections (Router) */
+    .page-view {
+      display: none;
+    }
+    .page-view.active-page {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: #060B10;
+      color: var(--text-light-muted);
+      padding: 60px 0 30px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.88rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      color: var(--text-light-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-col a:hover {
+      color: #FFFFFF;
+    }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    /* Alert / Success Toast */
+    .alert-box {
+      display: none;
+      padding: 16px;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      border-radius: var(--radius-sm);
+      color: #065F46;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .grid-4, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 16px;
+        gap: 14px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+      .heading-lg {
+        font-size: 2.1rem;
+      }
+      .heading-md {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- Top Real-Time Network Info -->
+  <div class="utility-bar">
+    <span><span class="status-dot"></span> Nordiskt tavlebyggarnätverk: Aktivt</span>
+    <span>Täckning: Sverige • Norge • Danmark • Finland</span>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="navigateTo('home')">
+        <div class="logo-symbol">P</div>
+        Panelcor
+      </a>
+
+      <nav>
+        <ul>
+          <li><a onclick="navigateTo('home')" id="nav-home" class="active">Hem</a></li>
+          <li><a onclick="navigateTo('buyers')" id="nav-buyers">För Köpare</a></li>
+          <li><a onclick="navigateTo('manufacturers')" id="nav-manufacturers">För Tavelverkstäder</a></li>
+          <li><a onclick="navigateTo('how-it-works')" id="nav-how-it-works">Så Fungerar Det</a></li>
+          <li><a onclick="navigateTo('about')" id="nav-about">Om Oss</a></li>
+          <li><a onclick="navigateTo('contact')" id="nav-contact">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch" style="display:flex; gap:6px; align-items:center; font-size:0.82rem; font-weight:700; margin-right:6px;">
+          <a href="/" style="color: var(--text-light-muted); text-decoration:none;">EN</a>
+          <span style="color:#33415580;">|</span>
+          <a href="/sv/" style="color: var(--text-light); text-decoration:underline;">SV</a>
+        </div>
+        <button class="btn btn-secondary" onclick="navigateTo('buyers')">Begär Offert</button>
+        <button class="btn btn-primary" onclick="navigateTo('manufacturers')">Anmäl Kapacitet</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- SIDA: HEM                                                                 -->
+  <!-- ========================================================================= -->
+  <main id="page-home" class="page-view active-page">
+
+    <!-- Hero Section -->
+    <section class="section-dark section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-dark-blue">Industriell B2B-marknadsplats</span>
+          <h1 class="heading-lg">Elskåp och styrskåp. Transparent prissättning. Sammanbunden tillverkningskapacitet.</h1>
+          <p class="lead lead-light">Panelcor matchar maskinbyggare, industriella OEM-tillverkare och ingenjörsteam med förgranskade skåptillverkare i Norden som har ledig monterkapacitet just nu.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="navigateTo('buyers')">Begär skåpoffert</button>
+            <button class="btn btn-secondary" onclick="navigateTo('how-it-works')">Läs mer om hur det fungerar</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 12px; font-size: 0.95rem;">AKTUELL SPECIFIKATION FÖR MARKNADSPLATSEN</div>
+            <div class="spec-row">
+              <span>Standardisering:</span>
+              <span class="spec-value">IEC 61439-1/-2</span>
+            </div>
+            <div class="spec-row">
+              <span>Vanligaste skåptyper:</span>
+              <span class="spec-value">PLC-skåp, MCC-skåp, RIO-skåp</span>
+            </div>
+            <div class="spec-row">
+              <span>Sammanlagd kapacitet i dag:</span>
+              <span class="spec-value">~1 850 montertimmar/månad</span>
+            </div>
+            <div class="spec-row">
+              <span>Målleveranstid:</span>
+              <span class="spec-value">3–7 veckor (konfigurerbart)</span>
+            </div>
+            <div class="spec-row">
+              <span>Regional täckning:</span>
+              <span class="spec-value">SE, NO, FI, DK (verkstadsnätverk)</span>
+            </div>
+            <div class="spec-row">
+              <span>Ritningsformat:</span>
+              <span class="spec-value">EPLAN, AutoCAD Electrical, PDF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Panelcor Pillars -->
+    <section class="section section-surface">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+          <span class="badge badge-blue">Byggd för industriell skala</span>
+          <h2 class="heading-md">Vi löser Nordens flaskhalsar inom skåptillverkning</h2>
+          <p class="lead" style="margin: 0 auto;">Skåptillverkning har historiskt byggts på enskilda leverantörsrelationer som drabbas av säsongsbacklog, oförutsägbara ledtider och ogenomskinliga arbetskostnadskalkyler.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">⚡</div>
+            <h3 class="heading-sm">Verifierad monterkapacitet</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Vi för samman köpare direkt med kvalificerade schakt- och tavleverkstäder som har aktiva, öppna monteringslinjer – vilket förkortar projektcyklerna betydligt.</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">📐</div>
+            <h3 class="heading-sm">Strukturerade offerter</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Slipp vaga PDF:er. Offerter via Panelcor detaljeras post för post: komponentinköp, mekanisk montering, kopplingsarbete och fabrikstestning (FAT).</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">🛡️</div>
+            <h3 class="heading-sm">Strikta standarder</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Alla samarbetande tavlebyggare tillverkar enligt IEC 61439, harmoniserade europeiska direktiv.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 4-Step Process Section -->
+    <section class="section">
+      <div class="container">
+        <span class="badge badge-copper">Metodiskt arbetsflöde</span>
+        <h2 class="heading-md">Från ritning till färdigt skåp i 4 disciplinerade steg</h2>
+        <p class="lead">En standardiserad livscykel utformad för elektriska projektledare och tavleverkstäder.</p>
+
+        <div class="grid-4" style="margin-top: 40px;">
+          <div class="card">
+            <div class="step-num">STEG 01</div>
+            <h3 class="heading-sm">Skicka in en RFQ</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Ange tekniska specifikationer, stycklista (BOM), skåpstorlekar, önskade leveransdatum och standardkrav.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">STEG 02</div>
+            <h3 class="heading-sm">Jämför offerter</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Ta emot standardiserade anbud från granskade nordiska tavlebyggare med transparent uppdelning av komponenter, montertimmar och leverans.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">STEG 03</div>
+            <h3 class="heading-sm">Bevilja ordern</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Bekräfta ordermilstolpar, lås inköpsfönstret för komponenter och utfärda formellt konstruktionsgodkännande med ömsesidiga sekretessavtal.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">STEG 04</div>
+            <h3 class="heading-sm">Följ produktionen</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Få statusuppdateringar, komponentberedskap, löpande testrapporter (FAT) och koordinerad leverans.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capacity Balancing Feature -->
+    <section class="section section-dark">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-dark-blue">Balansering av leveranskedjan</span>
+          <h2 class="heading-md">Hur Panelcor utjämnar produktionstoppar och dalar</h2>
+          <p class="lead lead-light">Inom skåpmontering är kapaciteten notoriskt ojämn. Ena månaden har verkstaden fyra veckors backlog, nästa månad står montörbänkarna tomma i väntan på konstruktionsgodkännanden.</p>
+          <p style="color: var(--text-light-muted); font-size: 0.95rem; margin-bottom: 24px;">Panelcor balanserar denna dynamik: vi vidarebefordrar överskottsefterfrågan till tavlebyggare med lediga montertimmar, vilket stabiliserar verkstadsintäkterna och håller kundprojekten i tid.</p>
+          <button class="btn btn-primary" onclick="navigateTo('manufacturers')">Läs mer för tavlebyggare</button>
+        </div>
+
+        <div class="card card-dark">
+          <h3 class="heading-sm" style="color: #FFFFFF;">Nordiska verkstadsverkligheter</h3>
+          <ul style="list-style: none; margin-top: 16px; font-size: 0.9rem; color: var(--text-light-muted);">
+            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-dark);">✓ <strong>Dämpa ledtidstoppar:</strong> Flytta produktion mellan regionala verkstäder när din vanliga leverantör är fullbokad.</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-dark);">✓ <strong>Bevara kompetenta montörtimmar:</strong> Skåpverkstäder slipper varsla monterare vid oväntade schemaförseningar.</li>
+            <li style="padding: 10px 0;">✓ <strong>Närhet & hållbarhet:</strong> Upphandling inom Sverige, Norge, Danmark och Finland minimerar transporter och frakthinder.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIDA: FÖR KÖPARE                                                          -->
+  <!-- ========================================================================= -->
+  <main id="page-buyers" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Inköp & ingenjörskonst</span>
+        <h1 class="heading-lg">Upphandla styrskåp i tid – utan leverantörslåsning.</h1>
+        <p class="lead lead-light">Utformad för maskin-OEM, industriföretag inom automationsindustrin, systemintegratörer och infrastrukturanläggningar i norra Europa.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Standardiserad upphandling</span>
+          <h2 class="heading-md">Varför upphandla via Panelcor?</h2>
+
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">1. Slipp flaskhalsar hos en enskild verkstad</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Om din vanliga schaktbyggare har 18 veckors backlog behöver du inte längre skjuta upp idrifttagningen av maskinerna. Koppla dig direkt till kvalificerade verkstäder med lediga montertimmar.</p>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">2. Jämförbara offertmallar</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Vi kräver standardiserade kostnadsuppdelningar för kapslingar, schaktutrustning, klämlister, monteringsarbete, koppling och testdokumentation.</p>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">3. Strikt efterlevnad av standarder</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Arbeta med verkstäder som behärskar IEC 61439-1 / IEC 61439-2 för lågspänningsutrustning samt maskinsäkerhetsdirektiven (IEC 60204-1).</p>
+          </div>
+        </div>
+
+        <!-- Buyer Interest Form -->
+        <div class="form-container">
+          <h3 class="heading-sm">Anmäl köparintresse / tidig RFQ-åtkomst</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Registrera er organisation för att skicka framtida skåp-RFQ:er eller få tidig tillgång till plattformen.</p>
+
+          <div id="buyer-alert" class="alert-box">
+            Tack! Er intresseanmälan är registrerad. Vår nordiska inköpsansvarige hör av sig till er.
+          </div>
+
+          <form onsubmit="handleBuyerSubmit(event)">
+            <input type="hidden" name="lang" value="sv">
+            <div class="form-group">
+              <label class="form-label">Företagsnamn *</label>
+              <input type="text" class="form-control" required name="company" placeholder="t.ex. Nordisk Industriautomation AB">
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Kontaktperson *</label>
+                <input type="text" class="form-control" required name="person" placeholder="Namn">
+              </div>
+              <div class="form-group">
+                <label class="form-label">E-post (arbete) *</label>
+                <input type="email" class="form-control" required name="email" placeholder="namn@foretag.se">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Land *</label>
+                <select class="form-control" required name="country">
+                  <option value="Sweden">Sverige</option>
+                  <option value="Norway">Norge</option>
+                  <option value="Denmark">Danmark</option>
+                  <option value="Finland">Finland</option>
+                  <option value="Iceland">Island</option>
+                  <option value="Other">Annat EU/EES</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Uppskattat antal skåp per år</label>
+                <select class="form-control" name="annual_volume">
+                  <option>1 – 10 skåp/år</option>
+                  <option>10 – 50 skåp/år</option>
+                  <option>50 – 250 skåp/år</option>
+                  <option>250+ skåp/år</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Vanliga skåptyper</label>
+              <input type="text" class="form-control" name="panel_types" placeholder="t.ex. PLC-/styrskåp, drivsystem, gruppskåp">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Nyckelkrav / anteckningar</label>
+              <textarea class="form-control" rows="3" name="notes" placeholder="Berätta om ledtidskrav, varumärkespreferenser (Rittal, Schneider, ABB, Siemens) eller nuvarande upphandlingsutmaningar..."></textarea>
+              <p class="form-note">🔒 Obs: Konfidentiella ritningar och CAD-filer hanteras under direkt NDA och delas inte offentligt.</p>
+            </div>
+
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Skicka köparregistrering</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIDA: FÖR TAVELVERKSTÄDER                                                 -->
+  <!-- ========================================================================= -->
+  <main id="page-manufacturers" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">För tavlebyggare & verkstäder</span>
+        <h1 class="heading-lg">Gör lediga montertimmar till förutsägbar intäkt.</h1>
+        <p class="lead lead-light">Panelcor matchar kvalitetscertifierade nordiska elverkstäder med kvalificerade projektorder för att verkstaden ska producera jämnt året runt.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Verkstadseffektivitet</span>
+          <h2 class="heading-md">Eliminera säsongsrelaterade kapacitetsfall</h2>
+
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Fyll planerade luckor</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Kundändringar eller försenade site-godkännanden ställer ofta till det i verkstadsschemat. Panelcor låter er ta på er förtillverkade delmontage eller kompletta styrskåp som passar exakt in i ert öppna schema.</p>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Noll marknadsföringskostnader</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Slipp kallringningar. Ni får tydliga, strukturerade specifikationer med fullständig stycklista och CAD-underlag redo för kalkyl, så ni kan fokusera på hantverk och kvalitet.</p>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Behåll er egen marginalstruktur</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Ni styr era egna arbetstaxor. Ange specificerade offerter utifrån verkstadens effektivitet och materiallager.</p>
+          </div>
+
+          <div class="spec-sheet" style="margin-top: 30px;">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 10px;">KAPACITETSPROFILER VI KOPPLAR:</div>
+            <div class="spec-row">
+              <span>Lågvolym / hög mix:</span>
+              <span class="spec-value">Komplexa automations-skåp</span>
+            </div>
+            <div class="spec-row">
+              <span>Serieproduktion:</span>
+              <span class="spec-value">OEM-serietillverkning</span>
+            </div>
+            <div class="spec-row">
+              <span>Snabb leverans:</span>
+              <span class="spec-value">Hjälp- och kopplingsboxar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manufacturer Registration Form -->
+        <div class="form-container">
+          <h3 class="heading-sm">Registrera er tavelverkstad</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Gå med i vår katalog av kvalificerade nordiska tillverkare av schakttavlor och automations-skåp.</p>
+
+          <div id="mfg-alert" class="alert-box">
+            Ansökan mottagen! Vårt nätverksteam granskar er verkstadsprofil inom 2 arbetsdagar.
+          </div>
+
+          <form onsubmit="handleMfgSubmit(event)">
+            <input type="hidden" name="lang" value="sv">
+            <div class="form-group">
+              <label class="form-label">Tavelverkstad / företagsnamn *</label>
+              <input type="text" class="form-control" required name="company" placeholder="t.ex. Nordiska Kopplingsskåp AB">
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Produktionsansvarig / kontakt *</label>
+                <input type="text" class="form-control" required name="person" placeholder="Namn">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Företags-e-post *</label>
+                <input type="email" class="form-control" required name="email" placeholder="production@company.com">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Verkstadens land *</label>
+                <select class="form-control" required name="country">
+                  <option value="Sweden">Sverige</option>
+                  <option value="Norway">Norge</option>
+                  <option value="Denmark">Danmark</option>
+                  <option value="Finland">Finland</option>
+                  <option value="Other">Annat nordiskt/baltiskt</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Verkstadens teamstorlek</label>
+                <select class="form-control" name="team_size">
+                  <option>1 – 5 el-montörer</option>
+                  <option>6 – 15 el-montörer</option>
+                  <option>16 – 40 el-montörer</option>
+                  <option>40+ el-montörer</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Standarder & testkapacitet</label>
+              <input type="text" class="form-control" name="standards" placeholder="t.ex. IEC 61439, ISO 9001, inhouse FAT-testbänk">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Tillgängliga timmar per månad (uppskattning)</label>
+              <input type="text" class="form-control" name="capacity_hours" placeholder="t.ex. 80 – 200 montertimmar/månad">
+            </div>
+
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Skicka verkstadsprofil</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIDA: SÅ FUNGERAR DET                                                     -->
+  <!-- ========================================================================= -->
+  <main id="page-how-it-works" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Arkitektur & flöde</span>
+        <h1 class="heading-lg">En systematisk marknadsplats för skräddarsydd tillverkning.</h1>
+        <p class="lead lead-light">Lär känna hur Panelcor säkrar specifikationstrohet, konkurrenskraftiga offerter och strikt genomförande från start till mål.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">STEG 01</div>
+            <h2 class="heading-md">Skicka in en RFQ</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Köpare laddar upp strukturerade projektparametrar: CAD-ritningar, enkelscheman (SLD), funktionsscheman, listor över önskade varumärken (t.ex. Schneider Electric, Siemens, ABB, Phoenix Contact, Rittal) och specifika leveransdatum.</p>
+            <p style="font-size: 0.88rem; color: var(--text-muted);"><strong>Konfidentialitet först:</strong> Konstruktionsfiler indexeras aldrig offentligt. De lagras i isolerade valv och är endast tillgängliga för verifierade verkstäder som undertecknar projektspecifika sekretessavtal.</p>
+          </div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 8px;">TYPISKA RFQ-UNDERLAG</div>
+            <div class="spec-row"><span>Strömscheman:</span><span class="spec-value">EPLAN P8 / PDF</span></div>
+            <div class="spec-row"><span>Stycklista (BOM):</span><span class="spec-value">Standardiserad Excel / CSV</span></div>
+            <div class="spec-row"><span>Skåpmått:</span><span class="spec-value">Höjd, bredd, djup, IP-klass</span></div>
+            <div class="spec-row"><span>Testprotokoll:</span><span class="spec-value">FAT-checklista / dielektriskt test</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">STEG 02</div>
+            <h2 class="heading-md">Jämför offerterna</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">I stället för ostrukturerade mejlkostnadsuppskattningar levererar Panelcor standardiserade, postvisade offerter. Ni får direktjämförelser av:</p>
+            <ul style="color: var(--text-muted); margin-left: 20px; font-size: 0.92rem; line-height: 1.8;">
+              <li>Komponentkostnad & ledtider</li>
+              <li>Mekanisk montering & kopplingstimmar</li>
+              <li>Dokumentation, test & FAT-kostnader</li>
+              <li>Garanterat leveransdatum (ex works eller levererat)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 style="font-weight: 700; margin-bottom: 8px;">Transparent jämförelsenyckel</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">Offerterna speglar verklig kapacitet. En verkstad med omedelbar kapacitet kan erbjuda snabbare genomförande utan akut-tillägg.</p>
+            <div style="background: var(--slate-100); padding: 14px; border-radius: var(--radius-sm); font-size: 0.82rem; font-family: var(--font-mono);">
+              Verkstad A: 5 veckor | Skåp i lager | IEC-enlig<br>
+              Verkstad B: 3,5 veckor | Helt specialkopplat | Expressbänk
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">STEG 03</div>
+            <h2 class="heading-md">Bevilja ordern</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">När den bästa offerten valts låses ordern. Båda parter enas om milstolpar: konstruktionsgodkännande, komponentanskaffning, monteringsstart, FAT-datum och överlämning.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Panelcor tillhandahåller ett kontraktligt ramverk så att både verkstad och kund har tydliga betalnings- och besiktningsvillkor.</p>
+          </div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 8px;">ORDERMILSTOLPAR</div>
+            <div class="spec-row"><span>Milstolpe 1:</span><span class="spec-value">Konstruktionsgodkännande & BOM-låsning</span></div>
+            <div class="spec-row"><span>Milstolpe 2:</span><span class="spec-value">Kapsling & kärnhårdvara på plats</span></div>
+            <div class="spec-row"><span>Milstolpe 3:</span><span class="spec-value">Koppling & punkt-till-punkt-verifiering</span></div>
+            <div class="spec-row"><span>Milstolpe 4:</span><span class="spec-value">FAT-godkännande & fraktklar</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="step-num">STEG 04</div>
+            <h2 class="heading-md">Följ produktionen</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Köpare har full insyn i skåpets utveckling via milstolpsuppdateringar och testgodkännanden. Slutliga rutinprov (IEC 61439 klaus 11 rutinverifiering) genomförs och signeras före avleverans.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Inga oväntade förseningar – uppstår en komponentförsening kommuniceras den transparent i uppföljningstidslinjen.</p>
+          </div>
+          <div class="card">
+            <h4 style="font-weight: 700; margin-bottom: 8px;">Kvalitetsverifieringschecklista</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">Standardtestrapporter följer varje färdigt skåp:</p>
+            <ul style="font-size: 0.82rem; color: var(--text-muted); list-style: disc; margin-left: 18px;">
+              <li>Dielektriska och isolationsmotståndstest</li>
+              <li>Kontinuitetstest av skyddsledare</li>
+              <li>Visuell och mekanisk åtdragningskontroll</li>
+              <li>Punkt-till-punkt-verifiering av elfunktion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIDA: OM OSS                                                              -->
+  <!-- ========================================================================= -->
+  <main id="page-about" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Om företaget</span>
+        <h1 class="heading-lg">Vi bygger motståndskraft i den nordiska industriella elektrifieringen.</h1>
+        <p class="lead lead-light">Panelcor föddes ur behovet att modernisera energiomställningens och industriautomationens fysiska ryggrad: elskåpet.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="heading-md">Den nordiska elektrifieringsutmaningen</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Norden ligger i täten för omställningen till grön industri – från batteritillverkning och fossilfritt stål till värmepumpar, vätgasanläggningar och automatiserade logistikcenter. Varje sådan installation kräver skräddarsydda elcentraler, motorstyrscentraler (MCC) och PLC-skåp.</p>
+
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Samtidigt är skåptillverkningen fortfarande fragmenterad. Skickliga verkstäder med högt tekniskt kunnande upplever ojämna efterfrågecykler. Och maskinbyggare tvingas acceptera leveranstider på 20+ veckor, helt enkelt för att den vanliga leverantören är överbokad.</p>
+
+        <h3 class="heading-sm" style="margin-top: 36px;">Vår marknadsplatsmission</h3>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Panelcor bygger det digitala samordningsskikt som binder ihop denna utspridda kapacitet. Genom att standardisera RFQ-processen och sammanföra transparenta kapacitetsdata i Sverige, Norge, Danmark och Finland håller vi verkstäderna kontinuerligt produktiva – och förkortar ledtiderna för industrin.</p>
+
+        <div class="card" style="margin-top: 40px; background: var(--slate-50);">
+          <h4 style="font-weight: 700; margin-bottom: 8px;">Framtidsplan: full digital integration</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">I takt med att marknadsplatsen växer är Panelcor arkitekturellt redo för säkra inloggade portaler, gemensamma CAD- och EPLAN-visare, standardiserade komponentprísflöden och automatiserade valv för FAT-dokumentation.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIDA: KONTAKT                                                             -->
+  <!-- ========================================================================= -->
+  <main id="page-contact" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Kontakta oss</span>
+        <h1 class="heading-lg">Kontakta Panelcor-teamet.</h1>
+        <p class="lead lead-light">Frågor om deltagande på plattformen, företagsintegrerade RFQ-flöden eller anslutning till tavlebyggarnätverket.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Direkt dialog</span>
+          <h2 class="heading-md">Låt oss prata om ert kapacitetsbehov</h2>
+          <p style="color: var(--text-muted); margin-bottom: 24px;">Om ni bygger skåp och vill jämna ut verkstadsbelastningen, eller om ni är en OEM som söker tillförlitlig tillverkningskapacitet i Norden – vårt team är redo.</p>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Högkvarter & drift</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem;">Panelcor AB (planerad)<br>Nordisk industri- och teknikregion<br>Stockholm • Göteborg • Helsingfors</div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Direkta förfrågningar</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem; font-family: var(--font-mono);">operations@Panelcor.com</div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Arbetsätt</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem;">Strikta ömsesidiga NDA:er vid all teknisk ritningsgranskning. Direkt efterlevnad av europeiska tillverkningssäkerhetsdirektiv.</div>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <h3 class="heading-sm">Skicka ett meddelande</h3>
+
+          <div id="contact-alert" class="alert-box">
+            Meddelandet är mottaget! Vårt samordningsteam svarar inom 24 timmar.
+          </div>
+
+          <form onsubmit="handleContactSubmit(event)">
+            <input type="hidden" name="lang" value="sv">
+            <div class="form-group">
+              <label class="form-label">Fullständigt namn *</label>
+              <input type="text" class="form-control" required name="person" placeholder="Ditt namn">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">E-postadress *</label>
+              <input type="email" class="form-control" required name="email" placeholder="du@foretag.se">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Jag är intresserad som...</label>
+              <select class="form-control" name="interest_type">
+                <option>Utrustningsköpare / Maskin-OEM</option>
+                <option>Tavelbyggare / Verkstad</option>
+                <option>Ingenjörskonsult / Systemintegratör</option>
+                <option>Annat / Allmän fråga</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Meddelande *</label>
+              <textarea class="form-control" rows="4" required name="message" placeholder="Hur kan vi hjälpa era kommande projekt eller er verkstadskapacitet?"></textarea>
+            </div>
+
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Skicka meddelande</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom: 14px;">
+          <div class="logo-symbol">P</div>
+          Panelcor
+        </div>
+        <p style="font-size: 0.84rem; max-width: 320px; line-height: 1.6;">Den specialiserade nordiska marknadsplatsen som för samman efterfrågan på elskåp med verifierad verkstadskapacitet.</p>
+        <p style="font-size: 0.78rem; margin-top: 14px; color: #64748B;">Elskåp och styrskåp. Transparent prissättning. Sammanbunden tillverkningskapacitet.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigering</h4>
+        <ul>
+          <li><a onclick="navigateTo('home')">Hem</a></li>
+          <li><a onclick="navigateTo('buyers')">För Köpare</a></li>
+          <li><a onclick="navigateTo('manufacturers')">För Tavelverkstäder</a></li>
+          <li><a onclick="navigateTo('how-it-works')">Så Fungerar Det</a></li>
+          <li><a onclick="navigateTo('about')">Om Panelcor</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Standarder</h4>
+        <ul>
+          <li><a href="#">IEC 61439-1 / -2</a></li>
+          <li><a href="#">Maskindirektivet 60204</a></li>
+          <li><a href="#">Konfidentiella NDA-valv</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Nordiskt fokus</h4>
+        <ul>
+          <li>Sverige</li>
+          <li>Norge</li>
+          <li>Finland</li>
+          <li>Danmark</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© Panelcor Marketplace. Alla rättigheter förbehållna. Industriell B2B-plattform.</div>
+      <div>Standardvillkor • Integritet & NDA-policy • Skydd av konstruktionsdata</div>
+    </div>
+  </footer>
+
+  <!-- Page Logic & Demonstration Form Handlers -->
+  <script>
+    // Simple client-side page routing (no server or build tools required)
+    function navigateTo(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page-view');
+      pages.forEach(page => page.classList.remove('active-page'));
+
+      // Remove active nav class
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Show selected page
+      const targetPage = document.getElementById('page-' + pageId);
+      if (targetPage) {
+        targetPage.classList.add('active-page');
+      }
+
+      // Highlight active nav
+      const targetNav = document.getElementById('nav-' + pageId);
+      if (targetNav) {
+        targetNav.classList.add('active');
+      }
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  <script>window.PANELCOR_I18N = { sending: "Skickar…", failed: "Inskickningen misslyckades — mejla operations@Panelcor.com", networkError: "Nätverksfel — försök igen eller mejla operations@Panelcor.com" };</script>
+  <script>window.PANELCOR_API_BASE = "https://api.panelcor.com/api";</script>
+  <script src="../forms-client.js"></script>
+</body>
+</html>
