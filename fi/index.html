@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panelcor | Pohjoismainen Sähkö- ja Ohjauskaappien Markkinapaikka</title>
+  <meta name="description" content="Sähkö- ja ohjauskaapit. Läpinäkyvä hinnoittelu. Yhdistetty tuotantokapasiteetti Pohjoismaissa.">
+  <link rel="alternate" hreflang="en" href="https://panelcor.com/">
+  <link rel="alternate" hreflang="sv" href="https://panelcor.com/sv/">
+  <link rel="alternate" hreflang="no" href="https://panelcor.com/no/">
+  <link rel="alternate" hreflang="da" href="https://panelcor.com/da/">
+  <link rel="alternate" hreflang="fi" href="https://panelcor.com/fi/">
+  <link rel="alternate" hreflang="x-default" href="https://panelcor.com/">
+  <link rel="canonical" href="https://panelcor.com/fi/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0A1118;
+      --bg-surface-dark: #121D27;
+      --bg-light: #F4F6F8;
+      --surface-white: #FFFFFF;
+      --text-main: #0F172A;
+      --text-muted: #5A6A80;
+      --text-light: #E2E8F0;
+      --text-light-muted: #94A3B8;
+      --border-subtle: #E2E8F0;
+      --border-dark: #223243;
+      --nordic-blue: #0284C7;
+      --nordic-blue-hover: #0369A1;
+      --accent-copper: #D97706;
+      --accent-copper-soft: #FEF3C7;
+      --slate-50: #F8FAFC;
+      --slate-100: #F1F5F9;
+      --slate-800: #1E293B;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
+      --shadow-lg: 0 10px 30px rgba(0,0,0,0.12);
+      --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: var(--text-main);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Top Utility Bar */
+    .utility-bar {
+      background: #060B10;
+      color: var(--text-light-muted);
+      font-size: 0.78rem;
+      padding: 6px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .utility-bar span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background-color: #10B981;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    /* Main Navigation */
+    header {
+      background: rgba(10, 17, 24, 0.96);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 1.35rem;
+      letter-spacing: -0.5px;
+    }
+    .logo-symbol {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--nordic-blue), #38BDF8);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+    .logo span {
+      color: var(--nordic-blue);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+      align-items: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text-light-muted);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.15s ease;
+      cursor: pointer;
+    }
+    nav a:hover, nav a.active {
+      color: #FFFFFF;
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Global Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      border: 1px solid transparent;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: var(--nordic-blue);
+      color: #FFFFFF;
+    }
+    .btn-primary:hover {
+      background: var(--nordic-blue-hover);
+    }
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #FFFFFF;
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+    .btn-outline-dark {
+      background: transparent;
+      color: var(--text-main);
+      border-color: var(--border-subtle);
+    }
+    .btn-outline-dark:hover {
+      background: var(--slate-100);
+      border-color: #cbd5e1;
+    }
+
+    /* Containers */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section {
+      padding: 80px 0;
+    }
+    .section-sm {
+      padding: 48px 0;
+    }
+    .section-dark {
+      background: var(--bg-dark);
+      color: #FFFFFF;
+    }
+    .section-surface {
+      background: var(--surface-white);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    /* Typography Utilities */
+    .badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 14px;
+    }
+    .badge-blue {
+      background: rgba(2, 132, 199, 0.12);
+      color: #0284C7;
+      border: 1px solid rgba(2, 132, 199, 0.3);
+    }
+    .badge-dark-blue {
+      background: rgba(2, 132, 199, 0.2);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .badge-copper {
+      background: var(--accent-copper-soft);
+      color: var(--accent-copper);
+      border: 1px solid rgba(217, 119, 6, 0.25);
+    }
+    .heading-lg {
+      font-size: 2.85rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .heading-md {
+      font-size: 2.1rem;
+      line-height: 1.25;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      margin-bottom: 16px;
+    }
+    .heading-sm {
+      font-size: 1.3rem;
+      line-height: 1.35;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .lead {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    .lead-light {
+      color: var(--text-light-muted);
+    }
+
+    /* Layout Grids */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    /* Cards */
+    .card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 30px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .card-dark {
+      background: var(--bg-surface-dark);
+      border-color: var(--border-dark);
+      color: var(--text-light);
+    }
+
+    /* Step Process Card */
+    .step-num {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--nordic-blue);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .step-num::after {
+      content: '';
+      height: 1px;
+      flex-grow: 1;
+      background: var(--border-subtle);
+    }
+
+    /* Capacity Graph / Spec Box */
+    .spec-sheet {
+      background: #0E1622;
+      border: 1px solid var(--border-dark);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: #94A3B8;
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .spec-row:last-child {
+      border-bottom: none;
+    }
+    .spec-value {
+      color: #38BDF8;
+      font-weight: 500;
+    }
+
+    /* Forms */
+    .form-container {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #CBD5E1;
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      background: #FFFFFF;
+      transition: border-color 0.15s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--nordic-blue);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+
+    /* Page Sections (Router) */
+    .page-view {
+      display: none;
+    }
+    .page-view.active-page {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background: #060B10;
+      color: var(--text-light-muted);
+      padding: 60px 0 30px;
+      border-top: 1px solid var(--border-dark);
+      font-size: 0.88rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    .footer-col a {
+      color: var(--text-light-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .footer-col a:hover {
+      color: #FFFFFF;
+    }
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+    }
+
+    /* Alert / Success Toast */
+    .alert-box {
+      display: none;
+      padding: 16px;
+      background: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      border-radius: var(--radius-sm);
+      color: #065F46;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .grid-2, .grid-3, .grid-4, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 16px;
+        gap: 14px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+      .heading-lg {
+        font-size: 2.1rem;
+      }
+      .heading-md {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  
+  <!-- Top Real-Time Network Info -->
+  <div class="utility-bar">
+    <span><span class="status-dot"></span> Pohjoismainen kaappiverstasverkosto: Aktiivinen</span>
+    <span>Kattavuus: Ruotsi • Norja • Tanska • Suomi</span>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo" onclick="navigateTo('home')">
+        <div class="logo-symbol">P</div>
+        Panelcor
+      </a>
+
+      <nav>
+        <ul>
+          <li><a onclick="navigateTo('home')" id="nav-home" class="active">Etusivu</a></li>
+          <li><a onclick="navigateTo('buyers')" id="nav-buyers">Ostajille</a></li>
+          <li><a onclick="navigateTo('manufacturers')" id="nav-manufacturers">Kaappiverstaat</a></li>
+          <li><a onclick="navigateTo('how-it-works')" id="nav-how-it-works">Näin Se Toimii</a></li>
+          <li><a onclick="navigateTo('about')" id="nav-about">Meistä</a></li>
+          <li><a onclick="navigateTo('contact')" id="nav-contact">Yhteystiedot</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="lang-switch" style="display:flex; gap:6px; align-items:center; font-size:0.82rem; font-weight:700; margin-right:6px;">
+          <a href="/" style="color: var(--text-light-muted); text-decoration:none;">EN</a><span style="color:#33415580;">|</span>
+          <a href="/sv/" style="color: var(--text-light-muted); text-decoration:none;">SV</a><span style="color:#33415580;">|</span>
+          <a href="/no/" style="color: var(--text-light-muted); text-decoration:none;">NO</a><span style="color:#33415580;">|</span>
+          <a href="/da/" style="color: var(--text-light-muted); text-decoration:none;">DA</a><span style="color:#33415580;">|</span>
+          <a href="/fi/" style="color: var(--text-light); text-decoration:underline;">FI</a>
+        </div>
+        <button class="btn btn-secondary" onclick="navigateTo('buyers')">Pyydä Tarjous</button>
+        <button class="btn btn-primary" onclick="navigateTo('manufacturers')">Ilmoita Kapasiteetti</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- SIVU: ETUSIVU                                                             -->
+  <!-- ========================================================================= -->
+  <main id="page-home" class="page-view active-page">
+
+    <!-- Hero Section -->
+    <section class="section-dark section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-dark-blue">Teollinen B2B-markkinapaikka</span>
+          <h1 class="heading-lg">Sähkö- ja ohjauskaapit. Läpinäkyvä hinnoittelu. Yhdistetty tuotantokapasiteetti.</h1>
+          <p class="lead lead-light">Panelcor yhdistää konevalmistajat, teolliset OEM-valmistajat ja suunnittelutiimit ennalta hyväksyttyihin pohjoismaisiin kaappivalmistajiin, joilla on kokoonpanokapasiteettia juuri nyt.</p>
+          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="navigateTo('buyers')">Pyydä kaappitarjous</button>
+            <button class="btn btn-secondary" onclick="navigateTo('how-it-works')">Katso miten se toimii</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 12px; font-size: 0.95rem;">MARKKINAPAIKAN AJANKOHTAINEN TILASTO</div>
+            <div class="spec-row">
+              <span>Standardointi:</span>
+              <span class="spec-value">IEC 61439-1/-2</span>
+            </div>
+            <div class="spec-row">
+              <span>Yleisimmät kaappityypit:</span>
+              <span class="spec-value">PLC-kaappi, MCC-kaappi, RIO-kaappi</span>
+            </div>
+            <div class="spec-row">
+              <span>Kapasiteetti tänään:</span>
+              <span class="spec-value">~1 850 kokoonpanotuntia/kk</span>
+            </div>
+            <div class="spec-row">
+              <span>Toimitusaika tyypillisesti:</span>
+              <span class="spec-value">3–7 viikkoa (muokattavissa)</span>
+            </div>
+            <div class="spec-row">
+              <span>Alueellinen kattavuus:</span>
+              <span class="spec-value">SE, NO, FI, DK (verstasverkosto)</span>
+            </div>
+            <div class="spec-row">
+              <span>Piirustusformaatit:</span>
+              <span class="spec-value">EPLAN, AutoCAD Electrical, PDF</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Panelcor Pillars -->
+    <section class="section section-surface">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 50px;">
+          <span class="badge badge-blue">Rakennettu teolliselle mittakaavalle</span>
+          <h2 class="heading-md">Ratkaisemme Pohjoismaiden kaappituotannon pullonkaulan</h2>
+          <p class="lead" style="margin: 0 auto;">Kaappituotanto on perinteisesti nojannut yhteen toimittajasuhteeseen, jota riivittävät sesongin jonot, ennustamattomat toimitusajat ja epäselvät työkustannusarviot.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">⚡</div>
+            <h3 class="heading-sm">Todennettu kokoonpanokapasiteetti</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Yhdistämme ostajat suoraan hyväksyttyihin kaappi- ja kuoriverstaisiin, joiden kokoonpanolinjat ovat aktiivisesti vapaana – mikä lyhentää projektisyklejä merkittävästi.</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">📐</div>
+            <h3 class="heading-sm">Jäsennellyt tarjoukset</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Unohda epämääräiset PDF-tarjoukset. Panelcor-tarjoukset eritellään rivi kerrallaan: komponenttihankinta, mekaaninen kokoonpano, kaapelointityö ja tehdastesti (FAT).</p>
+          </div>
+
+          <div class="card">
+            <div style="font-size: 1.8rem; margin-bottom: 14px;">🛡️</div>
+            <h3 class="heading-sm">Tiukat standardit</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Kaikki mukana olevat kaappivalmistajat tuottavat IEC 61439:n ja eurooppalaisten harmonisoitujen direktiivien mukaisesti.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The 4-Step Process Section -->
+    <section class="section">
+      <div class="container">
+        <span class="badge badge-copper">Menetelmällinen työnkulku</span>
+        <h2 class="heading-md">Piirustuksesta valmiiseen kaappiin 4 kurinalaisessa vaiheessa</h2>
+        <p class="lead">Standardoitu elinkaari, joka on suunniteltu sähköprojektipäälliköille ja kaappiverstaille.</p>
+
+        <div class="grid-4" style="margin-top: 40px;">
+          <div class="card">
+            <div class="step-num">VAIHE 01</div>
+            <h3 class="heading-sm">Jätä RFQ</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Anna tekniset tiedot, osaluettelo (BOM), kaappimitat, toivomasi toimituspäivät ja vaaditut standardit.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">VAIHE 02</div>
+            <h3 class="heading-sm">Vertaa tarjouksia</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Vastaanota standardoituja tarjouksia laadultaan varmennetuilta pohjoismaisilta kaappivalmistajilta läpinäkyvällä erittelyllä: komponentit, kokoonpanotunnit ja toimitus.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">VAIHE 03</div>
+            <h3 class="heading-sm">Myönnä tilaus</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Vahvista tilauksen etapit, lukitse komponenttien hankintaikkuna ja myönnä muodollinen suunnittelun hyväksyntä keskinäisine NDA-sopimuksineen.</p>
+          </div>
+
+          <div class="card">
+            <div class="step-num">VAIHE 04</div>
+            <h3 class="heading-sm">Seuraa tuotantoa</h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted);">Vastaanota tilannepäivityksiä, komponenttien valmiutta, jatkuva testiraportteja (FAT) ja koordinoitua toimitusta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capacity Balancing Feature -->
+    <section class="section section-dark">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-dark-blue">Toimitusketjun tasapainotus</span>
+          <h2 class="heading-md">Miten Panelcor tasoittaa tuotannon huippuja ja laaksoja</h2>
+          <p class="lead lead-light">Kaappikokoonpanossa kapasiteetti on pahamainen epätasainen. Toisena kuukautena verstaalla on neljän viikon jono; seuraavana kokoonpanopöydät seisovat tyhjillään suunnittelun hyväksyntöjen odotellessa.</p>
+          <p style="color: var(--text-light-muted); font-size: 0.95rem; margin-bottom: 24px;">Panelcor tasapainottaa tätä dynamikkaa: ohjaamme ylijäävän kysynnän kaappivalmistajille, joilla on vapaita kokoonpanotunteja – mikä vakauttaa verstaiden tuloksia ja pitää asiakasprojektit aikataulussa.</p>
+          <button class="btn btn-primary" onclick="navigateTo('manufacturers')">Lue lisää kaappivalmistajille</button>
+        </div>
+
+        <div class="card card-dark">
+          <h3 class="heading-sm" style="color: #FFFFFF;">Pohjoismainen verstaan arkipäivä</h3>
+          <ul style="list-style: none; margin-top: 16px; font-size: 0.9rem; color: var(--text-light-muted);">
+            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-dark);">✓ <strong>Tasoita toimitusaikahuippauksia:</strong> Siirrä tuotantoa alueellisten verstaiden välillä, kun tavanomaisen toimittajasi varaus on täynnä.</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid var(--border-dark);">✓ <strong>Säästä koulutettuja kokoonpanotunteja:</strong> Verstaat välttävät sähköasentajien irtisanomisia odottamattomien projektiviivästysten aikana.</li>
+            <li style="padding: 10px 0;">✓ <strong>Läheisyys & kestävyys:</strong> Hankinta Ruotsissa, Norjassa, Tanskassa ja Suomessa minimoi kuljetukset ja niiden kustannukset.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIVU: OSTAJILLE                                                           -->
+  <!-- ========================================================================= -->
+  <main id="page-buyers" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Hankinta & suunnittelu</span>
+        <h1 class="heading-lg">Hanki ohjauskaapit ajallaan – ilman toimittajasidonnaisuutta.</h1>
+        <p class="lead lead-light">Suunniteltu kone-OEM:ille, teollisen automaation yrityksille, järjestelmäintegraattoreille ja infrastruktuurilaitoksille Pohjois-Euroopassa.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Standardoitu hankinta</span>
+          <h2 class="heading-md">Miksi hankkia Panelcorin kautta?</h2>
+
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">1. Poista pullonkaula yksittäisestä verstaasta</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Kun tavanomaisella kaappivalmistajallasi on 18 viikon jono, koneiden käyttöönottoa ei tarvitse enää lykätä. Yhdistä suoraan hyväksyttyihin verstaisiin, joilla on vapaita kokoonpanotunteja.</p>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">2. Vertailukelpoiset tarjousmallit</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Edellytämme standardoituja kustannuserittelyjä: kuoret, kaappikomponentit, kiskosysteemit, kokoonpanotyö, kaapelointi ja testidokumentaatio.</p>
+          </div>
+
+          <div style="margin-bottom: 24px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">3. Tiukka standardienmukaisuus</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Työskentele verstaiden kanssa, jotka hallitsevat IEC 61439-1 / IEC 61439-2 -matalajännitelaitteiston sekä koneiden turvallisuusdirektiivit (IEC 60204-1).</p>
+          </div>
+        </div>
+
+        <!-- Buyer Interest Form -->
+        <div class="form-container">
+          <h3 class="heading-sm">Ostajien kiinnostusilmoitus / varhainen RFQ-pääsy</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Rekisteröi organisaatiosi lähettääksesi tulevia kaappi-RFQ:ita tai saadaksesi varhaisen pääsyn alustalle.</p>
+
+          <div id="buyer-alert" class="alert-box">
+            Kiitos! Kiinnostusilmoitus on vastaanotettu. Pohjoismainen hankintatiimimme ottaa sinuun yhteyttä.
+          </div>
+
+          <form onsubmit="handleBuyerSubmit(event)">
+            <input type="hidden" name="lang" value="fi">
+            <div class="form-group">
+              <label class="form-label">Yrityksen nimi *</label>
+              <input type="text" class="form-control" required name="company" placeholder="esim. Pohjoinen Teollisuusautomaatio Oy">
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Yhteyshenkilö *</label>
+                <input type="text" class="form-control" required name="person" placeholder="Nimi">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Sähköposti (työ) *</label>
+                <input type="email" class="form-control" required name="email" placeholder="nimi@yritys.fi">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Maa *</label>
+                <select class="form-control" required name="country">
+                  <option value="Sweden">Ruotsi</option>
+                  <option value="Norway">Norja</option>
+                  <option value="Denmark">Tanska</option>
+                  <option value="Finland">Suomi</option>
+                  <option value="Iceland">Islanti</option>
+                  <option value="Other">Muu EU/ETA</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Arvioitu kaappimäärä vuodessa</label>
+                <select class="form-control" name="annual_volume">
+                  <option>1 – 10 kaappia/vuosi</option>
+                  <option>10 – 50 kaappia/vuosi</option>
+                  <option>50 – 250 kaappia/vuosi</option>
+                  <option>250+ kaappia/vuosi</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Tyypilliset kaappityypit</label>
+              <input type="text" class="form-control" name="panel_types" placeholder="esim. PLC-/ohjauskaapit, taajuusmuuttajakeskukset, jakelukaapit">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Keskeiset vaatimukset / huomiot</label>
+              <textarea class="form-control" rows="3" name="notes" placeholder="Kerro toimitusaikavaatimuksista, suosikkimerkeistä (Rittal, Schneider, ABB, Siemens) tai nykyisistä hankintahaasteistasi..."></textarea>
+              <p class="form-note">🔒 Huom: Luottamukselliset piirustukset ja CAD-tiedostot käsitellään aina NDA:n alla, eikä niitä jaeta julkisesti.</p>
+            </div>
+
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Lähetä ostajan ilmoittautuminen</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIVU: KAAPPIVERSTAAT                                                      -->
+  <!-- ========================================================================= -->
+  <main id="page-manufacturers" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Kaappivalmistajille & verstaalle</span>
+        <h1 class="heading-lg">Muuta vapaat kokoonpanotunnit vakaaksi tulokseksi.</h1>
+        <p class="lead lead-light">Panelcor yhdistää laadultaan varmennetut pohjoismaiset sähköverstaat hyväksyttyihin projektitöihin, jotta verstas valmistaa tasaista koko vuoden.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Verstaan tehokkuus</span>
+          <h2 class="heading-md">Poista sesonkivaihtelut kapasiteetissa</h2>
+
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Täytä suunnitellut aukot</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Asiakasmuutokset tai viivästyneet rakennusluvat kiusaavat usein verstaan tuotantosuunnitelmaa. Panelcorin kautta voitte ottaa valmiiksi suunniteltuja osakokoonpanoja tai kokonaisia ohjauskaappeja täsmälleen avoimiin tuntipaikkoihin.</p>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Ei markkinointikuluja</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Unohda kylmämyynti. Saatte selkeät, jäsennellyt tiedostot täydellisine osaluetteloineen ja CAD-aineistoineen hintalaskentaa varten – voitte keskittyä käsityöhön ja laatuun.</p>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <h4 style="font-weight: 700; margin-bottom: 6px;">Säilyttäkää oma marginaalirakenne</h4>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">Asettakaa verstaan omat tuntihinnat. Antakaa eritellyt tarjoukset verstaan tehokkuuden ja materiaalivaraston mukaan.</p>
+          </div>
+
+          <div class="spec-sheet" style="margin-top: 30px;">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 10px;">KAPASITEETTIPROFIILIT, JOTKA YHDISTÄMME:</div>
+            <div class="spec-row">
+              <span>Pienet erät / suuri moninaisuus:</span>
+              <span class="spec-value">Monimutkaiset automaatiokaapit</span>
+            </div>
+            <div class="spec-row">
+              <span>Sarjatuotanto:</span>
+              <span class="spec-value">OEM-sarjatuotanto</span>
+            </div>
+            <div class="spec-row">
+              <span>Nopea toimitus:</span>
+              <span class="spec-value">Apu- ja kytkentärasiat</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Manufacturer Registration Form -->
+        <div class="form-container">
+          <h3 class="heading-sm">Rekisteröi verstaanne</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 20px;">Liity hyväksyttyjen pohjoismaisten kaappi- ja automaatiovalmistajien luetteloomme.</p>
+
+          <div id="mfg-alert" class="alert-box">
+            Hakemus vastaanotettu! Verkostotiimimme käsittelee verstaanne profiilin 2 arkipäivän kuluessa.
+          </div>
+
+          <form onsubmit="handleMfgSubmit(event)">
+            <input type="hidden" name="lang" value="fi">
+            <div class="form-group">
+              <label class="form-label">Kaappiverstas / yrityksen nimi *</label>
+              <input type="text" class="form-control" required name="company" placeholder="esim. Pohjoismaiset Kaappijärjestelmät Oy">
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Tuotantopäällikkö / yhteyshenkilö *</label>
+                <input type="text" class="form-control" required name="person" placeholder="Nimi">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Yrityksen sähköposti *</label>
+                <input type="email" class="form-control" required name="email" placeholder="production@yritys.fi">
+              </div>
+            </div>
+
+            <div class="grid-2" style="gap: 14px;">
+              <div class="form-group">
+                <label class="form-label">Verstaan maa *</label>
+                <select class="form-control" required name="country">
+                  <option value="Sweden">Ruotsi</option>
+                  <option value="Norway">Norja</option>
+                  <option value="Denmark">Tanska</option>
+                  <option value="Finland">Suomi</option>
+                  <option value="Other">Muu Pohjoismaa/Baltia</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Verstaan tiimin koko</label>
+                <select class="form-control" name="team_size">
+                  <option>1 – 5 sähköasentajaa</option>
+                  <option>6 – 15 sähköasentajaa</option>
+                  <option>16 – 40 sähköasentajaa</option>
+                  <option>40+ sähköasentajaa</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Standardit & testikapasiteetti</label>
+              <input type="text" class="form-control" name="standards" placeholder="esim. IEC 61439, ISO 9001, oma FAT-testauspenkki">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Vapaat tunnit kuukaudessa (arvio)</label>
+              <input type="text" class="form-control" name="capacity_hours" placeholder="esim. 80 – 200 kokoonpanotuntia/kk">
+            </div>
+
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Lähetä verstasprofiili</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIVU: NÄIN SE TOIMII                                                      -->
+  <!-- ========================================================================= -->
+  <main id="page-how-it-works" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Arkkitehtuuri & prosessi</span>
+        <h1 class="heading-lg">Jäsennelty markkinapaikka räätälöidylle valmistukselle.</h1>
+        <p class="lead lead-light">Katso, miten Panelcor varmistaa spesifikaatiojen mukaiset, kilpailukykyiset tarjoukset ja tiukan läpiviennin alusta loppuun.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">VAIHE 01</div>
+            <h2 class="heading-md">Jätä RFQ</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Ostajat lataavat jäsennellyt projektitiedot: CAD-piirustukset, yksiviivakaaviot, toimintakaaviot, suosikkimerkkien listat (esim. Schneider Electric, Siemens, ABB, Phoenix Contact, Rittal) ja konkreettiset toimitusmääräpäivät.</p>
+            <p style="font-size: 0.88rem; color: var(--text-muted);"><strong>Luottamuksellisuus ensin:</strong> Suunnittelutiedostoja ei koskaan indeksoida julkisesti. Ne säilytetään eristetyissä holveissa ja ovat saatavilla vain todennetuille verstaille, jotka allekirjoittavat projektikohtaiset NDA:t.</p>
+          </div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 8px;">TYYPILLISET RFQ-ASIAKIRJAT</div>
+            <div class="spec-row"><span>Kaaviot:</span><span class="spec-value">EPLAN P8 / PDF</span></div>
+            <div class="spec-row"><span>Osaluettelo (BOM):</span><span class="spec-value">Standardoitu Excel / CSV</span></div>
+            <div class="spec-row"><span>Kaappimitat:</span><span class="spec-value">Korkeus, leveys, syvyys, IP-luokka</span></div>
+            <div class="spec-row"><span>Testiprotokollat:</span><span class="spec-value">FAT-tarkistuslista / dielektrinen testi</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">VAIHE 02</div>
+            <h2 class="heading-md">Vertaa tarjouksia</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Panelcor toimittaa standardoidut rivitason tarjoukset epämääräisten sähköpostiarvioiden sijaan. Saat välittömästi vertailun:</p>
+            <ul style="color: var(--text-muted); margin-left: 20px; font-size: 0.92rem; line-height: 1.8;">
+              <li>Komponenttikustannukset & toimitusajat</li>
+              <li>Mekaaninen kokoonpano & kaapelointitunnit</li>
+              <li>Dokumentaatio, testaus & FAT-kustannukset</li>
+              <li>Taattu toimituspäivä (ex works tai toimitettuna)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4 style="font-weight: 700; margin-bottom: 8px;">Läpinäkyvä vertailuavain</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">Tarjoukset heijastavat todellista kapasiteettia. Heti kapasiteettia omaava verstas voi tarjota nopeampaa läpivientiä ilman kiireellisyyslisää.</p>
+            <div style="background: var(--slate-100); padding: 14px; border-radius: var(--radius-sm); font-size: 0.82rem; font-family: var(--font-mono);">
+              Verstas A: 5 viikkoa | Kaapit varastossa | IEC-vaatimustenmukaisuus<br>
+              Verstas B: 3,5 viikkoa | Täysi erikoiskytkentä | Express-penkki
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-bottom: 50px;">
+          <div>
+            <div class="step-num">VAIHE 03</div>
+            <h2 class="heading-md">Myönnä tilaus</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Kun paras tarjous on valittu, tilaus lukitaan. Molemmat osapuolet sopivat etapeista: suunnittelun hyväksyntä, komponenttihankinta, kokoonpanon aloitus, FAT-päivä ja luovutus.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Panelcor tarjoaa sopimuskehyksen, jolla sekä verstas että asiakas tietävät maksu- ja tarkastusehdot.</p>
+          </div>
+          <div class="spec-sheet">
+            <div style="color: #FFFFFF; font-weight: 700; margin-bottom: 8px;">TILAUKSEN ETAPIT</div>
+            <div class="spec-row"><span>Etappi 1:</span><span class="spec-value">Suunnittelun hyväksyntä & BOM-lukitus</span></div>
+            <div class="spec-row"><span>Etappi 2:</span><span class="spec-value">Kuori & ydinlaitteisto paikallaan</span></div>
+            <div class="spec-row"><span>Etappi 3:</span><span class="spec-value">Kaapelointi & piste-pistevarmennus</span></div>
+            <div class="spec-row"><span>Etappi 4:</span><span class="spec-value">FAT-hyväksyntä & lähetysvalmius</span></div>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div>
+            <div class="step-num">VAIHE 04</div>
+            <h2 class="heading-md">Seuraa tuotantoa</h2>
+            <p style="color: var(--text-muted); margin-bottom: 14px;">Ostajilla on täysi näkyvyys kaapin etenemiseen etappipäivitysten ja testihyväksyntöjen kautta. Lopulliset rutiinitestit (IEC 61439 klausuuli 11, rutiinitarkastukset) suoritetaan ja allekirjoitetaan ennen luovutusta.</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Ei yllättäviä viivytyksiä – jos komponentti viivästyy, siitä kommunikoidaan avoimesti seuranta-aikataulussa.</p>
+          </div>
+          <div class="card">
+            <h4 style="font-weight: 700; margin-bottom: 8px;">Laadunvarmennustarkistuslista</h4>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">Standardoidut testiraportit seuraavat jokaista valmista kaappia:</p>
+            <ul style="font-size: 0.82rem; color: var(--text-muted); list-style: disc; margin-left: 18px;">
+              <li>Dielektriset ja eristysresistanssitestit</li>
+              <li>Suojajohtimen jatkuvuustestit</li>
+              <li>Visuaalinen ja mekaaninen vastaanottotarkastus</li>
+              <li>Sähkötoiminnon piste-pistevarmennus</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIVU: MEISTÄ                                                              -->
+  <!-- ========================================================================= -->
+  <main id="page-about" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Tietoja yrityksestä</span>
+        <h1 class="heading-lg">Rakennamme joustavuutta Pohjoismaiden teolliseen sähköistykseen.</h1>
+        <p class="lead lead-light">Panelcor syntyi tarpeesta modernisoida energiamurroksen ja teollisen automaation fyysinen selkäranka: sähkökaappi.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 800px;">
+        <h2 class="heading-md">Pohjoismaisen sähköistyksen haaste</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Pohjoismaat ovat edellä teollisuuden vihreässä murroksessa – akkuvalmistuksesta ja fossiilittomasta teräksestä lämpöpumppuihin, vetylaitoksiin ja automatisoituihin logistiikkakeskuksiin. Jokainen tämänlainen installaatio vaatii räätälöityjä jakelukaappeja, moottorinohjauskeskuksia (MCC) ja PLC-kaappeja.</p>
+
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Samalla kaappiteollisuus on edelleen pirstoutunut. Taitavat verstaat, joilla on korkea tekninen osaaminen, kokevat epätasaista kysyntäsyklejä. Ja konevalmistajien on hyväksyttävä 20+ viikon toimitusajat, pelkästään siksi, että tavanomainen toimittaja on ylivarattu.</p>
+
+        <h3 class="heading-sm" style="margin-top: 36px;">Missiomme</h3>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">Panelcor rakentaa digitaalista koordinaatiokerrosta, joka yhdistää tämän hajautetun kapasiteetin. Standardoimalla RFQ-prosessin ja kokoamalla läpinäkyvää kapasiteettitietoa Ruotsissa, Norjassa, Tanskassa ja Suomessa pidämme verstaat jatkuvasti työssä – ja lyhennämme teollisuuden toimitusaikoja.</p>
+
+        <div class="card" style="margin-top: 40px; background: var(--slate-50);">
+          <h4 style="font-weight: 700; margin-bottom: 8px;">Tulevaisuussuunnitelma: täysi digitaalinen integraatio</h4>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">Markkinapaikan kasvaessa Panelcorin arkkitehtuuri on valmis turvattuihin sisäänkirjautumisportaaleihin, yhteisiin CAD- ja EPLAN-katselimiin, standardoituihin komponenttihintasyötteisiin ja automatisoituihin FAT-dokumentaation holveihin.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SIVU: YHTEYSTIEDOT                                                        -->
+  <!-- ========================================================================= -->
+  <main id="page-contact" class="page-view">
+    <section class="section-dark section">
+      <div class="container">
+        <span class="badge badge-dark-blue">Ota yhteyttä</span>
+        <h1 class="heading-lg">Ota yhteyttä Panelcor-tiimiin.</h1>
+        <p class="lead lead-light">Kysymykset alustalle liittymisestä, yrityskohtaisista RFQ-prosesseista tai kaappivalmistajaverkostoon liittymisestä.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-2">
+        <div>
+          <span class="badge badge-blue">Suora dialogi</span>
+          <h2 class="heading-md">Puhutaan kapasiteettitarpeistanne</h2>
+          <p style="color: var(--text-muted); margin-bottom: 24px;">Jos valmistatte kaappeja ja haluatte tasata verstaan kuormaa tai olette OEM, joka etsii luotettavaa tuotantokapasiteettia Pohjoismaista – tiimimme on valmiina.</p>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Pääkonttori & toiminta</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem;">Panelcor AB (suunnitteilla)<br>Pohjoinen teollisuus- ja teknologia-alue<br>Tukholma • Göteborg • Helsinki</div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Suorat yhteydenotot</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem; font-family: var(--font-mono);">operations@Panelcor.com</div>
+          </div>
+
+          <div style="margin-bottom: 20px;">
+            <div style="font-weight: 700; margin-bottom: 4px;">Työskentelytapa</div>
+            <div style="color: var(--text-muted); font-size: 0.92rem;">Tiukat keskinäiset NDA:t kaikessa teknisten piirustusten läpikäynnissä. Suora noudattaminen eurooppalaisia tuoteturvallisuusdirektiivejä kohtaan.</div>
+          </div>
+        </div>
+
+        <div class="form-container">
+          <h3 class="heading-sm">Lähetä viesti</h3>
+
+          <div id="contact-alert" class="alert-box">
+            Viesti vastaanotettu! Koordinaatiotiimimme vastaa 24 tunnin sisällä.
+          </div>
+
+          <form onsubmit="handleContactSubmit(event)">
+            <input type="hidden" name="lang" value="fi">
+            <div class="form-group">
+              <label class="form-label">Koko nimi *</label>
+              <input type="text" class="form-control" required name="person" placeholder="Nimesi">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Sähköpostiosoite *</label>
+              <input type="email" class="form-control" required name="email" placeholder="nimi@yritys.fi">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Olen kiinnostunut roolissa...</label>
+              <select class="form-control" name="interest_type">
+                <option>Laitteiden ostaja / Kone-OEM</option>
+                <option>Kaappivalmistaja / Verstas</option>
+                <option>Suunnittelukonsultti / Järjestelmäintegraattori</option>
+                <option>Muu / Yleinen yhteydenotto</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Viesti *</label>
+              <textarea class="form-control" rows="4" required name="message" placeholder="Miten voimme auttaa tulevia projektejanne tai verstaanne kapasiteettia?"></textarea>
+            </div>
+
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Lähetä viesti</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <div class="logo" style="margin-bottom: 14px;">
+          <div class="logo-symbol">P</div>
+          Panelcor
+        </div>
+        <p style="font-size: 0.84rem; max-width: 320px; line-height: 1.6;">Erikoistunut Pohjoismaiden markkinapaikka, joka yhdistää sähkökaappien kysynnän todennettuun verstaskapasiteettiin.</p>
+        <p style="font-size: 0.78rem; margin-top: 14px; color: #64748B;">Sähkö- ja ohjauskaapit. Läpinäkyvä hinnoittelu. Yhdistetty tuotantokapasiteetti.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigaatio</h4>
+        <ul>
+          <li><a onclick="navigateTo('home')">Etusivu</a></li>
+          <li><a onclick="navigateTo('buyers')">Ostajille</a></li>
+          <li><a onclick="navigateTo('manufacturers')">Kaappiverstaat</a></li>
+          <li><a onclick="navigateTo('how-it-works')">Näin Se Toimii</a></li>
+          <li><a onclick="navigateTo('about')">Meistä</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Standardit</h4>
+        <ul>
+          <li><a href="#">IEC 61439-1 / -2</a></li>
+          <li><a href="#">Konedirektiivi 60204</a></li>
+          <li><a href="#">Luottamukselliset NDA-holvit</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Pohjoismainen fokus</h4>
+        <ul>
+          <li>Ruotsi</li>
+          <li>Norja</li>
+          <li>Suomi</li>
+          <li>Tanska</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>© Panelcor Marketplace. Kaikki oikeudet pidätetään. Teollinen B2B-alusta.</div>
+      <div>Standardiehdot • Tietosuoja & NDA-käytäntö • Suunnittelutietojen suojaus</div>
+    </div>
+  </footer>
+
+  <!-- Page Logic & Demonstration Form Handlers -->
+  <script>
+    // Simple client-side page routing (no server or build tools required)
+    function navigateTo(pageId) {
+      // Hide all pages
+      const pages = document.querySelectorAll('.page-view');
+      pages.forEach(page => page.classList.remove('active-page'));
+
+      // Remove active nav class
+      const navLinks = document.querySelectorAll('nav a');
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Show selected page
+      const targetPage = document.getElementById('page-' + pageId);
+      if (targetPage) {
+        targetPage.classList.add('active-page');
+      }
+
+      // Highlight active nav
+      const targetNav = document.getElementById('nav-' + pageId);
+      if (targetNav) {
+        targetNav.classList.add('active');
+      }
+
+      // Scroll to top
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  <script>window.PANELCOR_I18N = { sending: "Lähetetään…", failed: "Lähetys epäonnistui — sähköpostitse operations@Panelcor.com", networkError: "Verkkovirhe — yritä uudelleen tai lähetä sähköpostia operations@Panelcor.com" };</script>
+  <script>window.PANELCOR_API_BASE = "https://api.panelcor.com/api";</script>
+  <script src="../forms-client.js"></script>
+</body>
+</html>
